@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-export function Drink({ drink }) {
+export function Drink({drink}) {
   return (
     <div className="drink">
       <h2>
@@ -13,5 +13,5 @@ export function Drink({ drink }) {
         ))}
       </section>
     </div>
-  );
+  )
 }

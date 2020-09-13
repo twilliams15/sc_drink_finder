@@ -1,34 +1,37 @@
-import React from "react";
-import "./styles.css";
-import allDrinks from "./data/all_drinks";
-import { findDrinksByName, findDrinksByIngredient } from "./support/helpers";
-import { SearchForm } from "./modules/SearchForm";
-import { InStock } from "./modules/InStock";
-import { DrinkList } from "./modules/DrinkList";
+import React from 'react'
+import './styles.css'
+import allDrinks from './data/all_drinks'
+import {findDrinksByIngredient, findDrinksByName} from './support/helpers'
+import {SearchForm} from './modules/SearchForm'
+import {InStock} from './modules/InStock'
+import {DrinkList} from './modules/DrinkList'
 
 export default function App() {
-  const [currentDrinks, setCurrentDrinks] = React.useState(null);
+  const [currentDrinks, setCurrentDrinks] = React.useState(null)
   const [inStock, setInStock] = React.useState(
-    window.localStorage.getItem("inStock") || ""
-  );
+    window.localStorage.getItem('inStock') || '',
+  )
+
   function handleStockChange(e) {
-    let stock = inStock;
+    let stock = inStock
     e.target.checked
       ? (stock += e.target.id)
-      : (stock = stock.replace(e.target.id, ""));
-    setInStock(stock);
-    window.localStorage.setItem("inStock", stock);
+      : (stock = stock.replace(e.target.id, ''))
+    setInStock(stock)
+    window.localStorage.setItem('inStock', stock)
   }
+
   function handleStockSubmit(e) {
-    e.preventDefault();
-    const result = [];
+    e.preventDefault()
+    const result = []
     for (let d in allDrinks) {
       if (allDrinks[d].ingredients.every((i) => inStock.includes(i))) {
-        result.push(allDrinks[d]);
+        result.push(allDrinks[d])
       }
     }
-    setCurrentDrinks(result);
+    setCurrentDrinks(result)
   }
+
   return (
     <div>
       <h1>SC Drink Finder</h1>
@@ -47,11 +50,11 @@ export default function App() {
         allDrinks.filter(
           (d) =>
             d.ingredients.filter((i) => inStock.includes(i) === false)
-              .length === 1
-        )
+              .length === 1,
+        ),
       )}
-      <DrinkList drinks={currentDrinks} />
+      <DrinkList drinks={currentDrinks}/>
       <footer></footer>
     </div>
-  );
+  )
 }

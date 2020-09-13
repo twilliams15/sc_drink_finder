@@ -1,17 +1,19 @@
-import React from "react";
-import allIngredients from "../data/all_ingredients";
+import React from 'react'
+import allIngredients from '../data/all_ingredients'
 
-export function InStock({ onStockChange, onStockSubmit, inStock }) {
-  const [symbol, setSymbol] = React.useState("+");
+export function InStock({onStockChange, onStockSubmit, inStock}) {
+  const [symbol, setSymbol] = React.useState('+')
+
   function toggleAccordion() {
-    symbol === "+" ? setSymbol("–") : setSymbol("+");
-    const stockItems = document.getElementsByClassName("stock");
+    symbol === '+' ? setSymbol('–') : setSymbol('+')
+    const stockItems = document.getElementsByClassName('stock');
     [...stockItems].forEach((i) =>
-      i.style.display === "block"
-        ? (i.style.display = "none")
-        : (i.style.display = "block")
-    );
+      i.style.display === 'block'
+        ? (i.style.display = 'none')
+        : (i.style.display = 'block'),
+    )
   }
+
   return (
     <form id="in-stock" onSubmit={onStockSubmit}>
       <p className="accordion" onClick={toggleAccordion}>
@@ -33,11 +35,11 @@ export function InStock({ onStockChange, onStockSubmit, inStock }) {
                   {allIngredients[c][i]}
                 </label>
               </li>
-            );
+            )
           })}
         </ul>
       ))}
       <button type="submit">Search by stock</button>
     </form>
-  );
+  )
 }

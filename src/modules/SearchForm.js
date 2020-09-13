@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-export function SearchForm({ onNameChange, onIngredientChange }) {
+export function SearchForm({onNameChange, onIngredientChange}) {
   return (
     <form id="search">
       <p>Search for a drink</p>
@@ -11,7 +11,7 @@ export function SearchForm({ onNameChange, onIngredientChange }) {
         autoComplete="off"
         onChange={onNameChange}
       />
-      <br />
+      <br/>
       <label htmlFor="ingredient">by ingredient: </label>
       <input
         id="ingredient"
@@ -19,7 +19,7 @@ export function SearchForm({ onNameChange, onIngredientChange }) {
         autoComplete="off"
         onChange={onIngredientChange}
       />
-      <br />
+      <br/>
       <label htmlFor="rum">by rum number: </label>
       <select id="rum" onChange={onIngredientChange}>
         <option value="---">-</option>
@@ -33,5 +33,5 @@ export function SearchForm({ onNameChange, onIngredientChange }) {
         <option value="(8)">8</option>
       </select>
     </form>
-  );
+  )
 }
