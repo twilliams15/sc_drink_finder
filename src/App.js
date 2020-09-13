@@ -2,9 +2,10 @@ import React from 'react'
 import './styles.css'
 import allDrinks from './data/all_drinks'
 import {
+  countDrinksMissingIngredient,
+  countDrinksMissingMostCommonIngredient,
   findDrinksByIngredient,
   findDrinksByName,
-  countDrinksMissingIngredient,
   findDrinksMissingOneIngredient,
   mostCommonMissingIngredient,
 } from './support/helpers'
@@ -60,14 +61,12 @@ export default function App() {
         Find drinks missing 1 ingredient
       </button>
       <br />
-      <p>
-        With {mostCommonMissingIngredient(inStock)}, you could make{' '}
-        {countDrinksMissingIngredient(
-          mostCommonMissingIngredient(inStock),
-          inStock
-        )}{' '}
-        more drinks
-      </p>
+      {countDrinksMissingMostCommonIngredient(inStock) > 1 && (
+        <p>
+          Note! With {mostCommonMissingIngredient(inStock)}, you could make{' '}
+          {countDrinksMissingMostCommonIngredient(inStock)} more drinks!
+        </p>
+      )}
       <DrinkList drinks={currentDrinks} inStock={inStock} />
       <footer />
     </div>

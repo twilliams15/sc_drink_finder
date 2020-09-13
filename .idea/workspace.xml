@@ -20,24 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/fixtures/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/fixtures/example.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/all_drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_drinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/all_ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_ingredients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/DrinkList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/DrinkList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/InStock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/InStock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/SearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/support/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/support/helpers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +99,7 @@
       <updated>1599941213113</updated>
       <workItem from="1599941214501" duration="5816000" />
       <workItem from="1600028221453" duration="49000" />
-      <workItem from="1600028280425" duration="3733000" />
+      <workItem from="1600028280425" duration="4570000" />
     </task>
     <servers />
   </component>

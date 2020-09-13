@@ -42,3 +42,10 @@ export function countDrinksMissingIngredient(ingredient, inStock) {
     drinkHasIngredient(d, ingredient)
   ).length
 }
+
+export function countDrinksMissingMostCommonIngredient(inStock) {
+  return countDrinksMissingIngredient(
+    mostCommonMissingIngredient(inStock),
+    inStock
+  )
+}
