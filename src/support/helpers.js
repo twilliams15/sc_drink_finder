@@ -21,6 +21,17 @@ export function getMissingIngredients(drink, inStock) {
 }
 
 export function findDrinksMissingOneIngredient(inStock) {
-  console.log(allDrinks.filter((d) => getMissingIngredients(d, inStock).length === 1))
   return allDrinks.filter((d) => getMissingIngredients(d, inStock).length === 1)
+}
+
+export function mostCommonMissingIngredient(inStock) {
+  return findDrinksMissingOneIngredient(inStock)
+    .map(d => getMissingIngredients(d, inStock))
+    .flat()
+    .reduce((a, b, i, arr) =>
+      (arr.filter(v => v === a).length >= arr.filter(v => v === b).length ? a : b), '')
+}
+
+export function countDrinksMissingIngredient(ingredient, inStock) {
+  return findDrinksMissingOneIngredient(inStock).filter(d=> drinkHasIngredient(d, ingredient)).length
 }

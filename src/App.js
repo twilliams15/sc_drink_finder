@@ -1,11 +1,16 @@
 import React from 'react'
 import './styles.css'
 import allDrinks from './data/all_drinks'
-import {findDrinksByIngredient, findDrinksByName, findDrinksMissingOneIngredient} from './support/helpers'
+import {
+  findDrinksByIngredient,
+  findDrinksByName,
+  countDrinksMissingIngredient,
+  findDrinksMissingOneIngredient,
+  mostCommonMissingIngredient,
+} from './support/helpers'
 import {SearchForm} from './modules/SearchForm'
 import {InStock} from './modules/InStock'
 import {DrinkList} from './modules/DrinkList'
-import {Drink} from './modules/Drink'
 
 export default function App() {
   const [currentDrinks, setCurrentDrinks] = React.useState(null)
@@ -33,8 +38,7 @@ export default function App() {
     setCurrentDrinks(result)
   }
 
-  function handleOneIngredientSubmit(e) {
-    e.preventDefault()
+  function handleOneIngredientSubmit() {
     setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
   }
 
@@ -52,7 +56,9 @@ export default function App() {
         onStockSubmit={handleStockSubmit}
         inStock={inStock}
       />
-      <button onClick={handleOneIngredientSubmit}>Find Drinks Missing 1 Ingredient</button>
+      <button onClick={handleOneIngredientSubmit}>Find drinks missing 1 ingredient</button>
+      <br/>
+      <p>With {mostCommonMissingIngredient(inStock)}, you could make {countDrinksMissingIngredient(mostCommonMissingIngredient(inStock), inStock)} more drinks</p>
       <DrinkList drinks={currentDrinks} inStock={inStock}/>
       <footer/>
     </div>

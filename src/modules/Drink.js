@@ -1,7 +1,6 @@
 import React from 'react'
 
 export function Drink({drink, inStock}) {
-  console.log(inStock)
   return (
     <div className="drink">
       <h2>
