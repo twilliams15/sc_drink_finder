@@ -8,14 +8,10 @@ export function findDrinksByName(searchTerm) {
 }
 
 export function drinkHasIngredient(drink, ingredient) {
-  return drink.ingredients
-    .map((i) => i.toLowerCase().includes(ingredient.toLowerCase()))
-    .includes(true)
+  return drink.ingredients.some((i) => i.includes(ingredient.toLowerCase()))
 }
 
 export function findDrinksByIngredient(searchTerm) {
   if (!searchTerm) return
-  return allDrinks.filter((d) =>
-    d.ingredients.some((i) => i.includes(searchTerm.toLowerCase())),
-  )
+  return allDrinks.filter((d) => drinkHasIngredient(d, searchTerm))
 }

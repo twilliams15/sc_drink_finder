@@ -54,7 +54,7 @@ export default function App() {
         ),
       )}
       <DrinkList drinks={currentDrinks}/>
-      <footer></footer>
+      <footer />
     </div>
   )
 }
