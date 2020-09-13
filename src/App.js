@@ -2,7 +2,6 @@ import React from 'react'
 import './styles.css'
 import allDrinks from './data/all_drinks'
 import {
-  countDrinksMissingIngredient,
   countDrinksMissingMostCommonIngredient,
   findDrinksByIngredient,
   findDrinksByName,
