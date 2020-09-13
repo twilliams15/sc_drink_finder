@@ -13,6 +13,10 @@ section {
     margin-top: 1rem;
 }
 
+li {
+    list-style: none;
+}
+
 footer {
     margin-top: 4rem;
 }
