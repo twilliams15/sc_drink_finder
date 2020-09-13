@@ -15,3 +15,12 @@ export function findDrinksByIngredient(searchTerm) {
   if (!searchTerm) return
   return allDrinks.filter((d) => drinkHasIngredient(d, searchTerm))
 }
+
+export function getMissingIngredients(drink, inStock) {
+  return drink.ingredients.filter((i) => inStock.includes(i) === false)
+}
+
+export function findDrinksMissingOneIngredient(inStock) {
+  console.log(allDrinks.filter((d) => getMissingIngredients(d, inStock).length === 1))
+  return allDrinks.filter((d) => getMissingIngredients(d, inStock).length === 1)
+}

@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.css'
 import allDrinks from './data/all_drinks'
-import {findDrinksByIngredient, findDrinksByName} from './support/helpers'
+import {findDrinksByIngredient, findDrinksByName, findDrinksMissingOneIngredient} from './support/helpers'
 import {SearchForm} from './modules/SearchForm'
 import {InStock} from './modules/InStock'
 import {DrinkList} from './modules/DrinkList'
+import {Drink} from './modules/Drink'
 
 export default function App() {
   const [currentDrinks, setCurrentDrinks] = React.useState(null)
@@ -32,6 +33,11 @@ export default function App() {
     setCurrentDrinks(result)
   }
 
+  function handleOneIngredientSubmit(e) {
+    e.preventDefault()
+    setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
+  }
+
   return (
     <div>
       <h1>SC Drink Finder</h1>
@@ -46,15 +52,9 @@ export default function App() {
         onStockSubmit={handleStockSubmit}
         inStock={inStock}
       />
-      {console.log(
-        allDrinks.filter(
-          (d) =>
-            d.ingredients.filter((i) => inStock.includes(i) === false)
-              .length === 1,
-        ),
-      )}
-      <DrinkList drinks={currentDrinks}/>
-      <footer />
+      <button onClick={handleOneIngredientSubmit}>Find Drinks Missing 1 Ingredient</button>
+      <DrinkList drinks={currentDrinks} inStock={inStock}/>
+      <footer/>
     </div>
   )
 }

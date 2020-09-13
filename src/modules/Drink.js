@@ -1,6 +1,7 @@
 import React from 'react'
 
-export function Drink({drink}) {
+export function Drink({drink, inStock}) {
+  console.log(inStock)
   return (
     <div className="drink">
       <h2>
@@ -9,7 +10,7 @@ export function Drink({drink}) {
       </h2>
       <section className="ingredients">
         {drink.ingredients.map((o) => (
-          <li key={o}>{o}</li>
+          <li key={o}>{inStock.includes(o) ? o : `${o} *`}</li>
         ))}
       </section>
     </div>
