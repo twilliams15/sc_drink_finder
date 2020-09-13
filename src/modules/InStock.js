@@ -6,11 +6,11 @@ export function InStock({onStockChange, onStockSubmit, inStock}) {
 
   function toggleAccordion() {
     symbol === '+' ? setSymbol('–') : setSymbol('+')
-    const stockItems = document.getElementsByClassName('stock');
-    [...stockItems].forEach((i) =>
+    const stockItems = document.getElementsByClassName('stock')
+    ;[...stockItems].forEach((i) =>
       i.style.display === 'block'
         ? (i.style.display = 'none')
-        : (i.style.display = 'block'),
+        : (i.style.display = 'block')
     )
   }
 

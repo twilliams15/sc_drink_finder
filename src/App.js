@@ -15,7 +15,7 @@ import {DrinkList} from './modules/DrinkList'
 export default function App() {
   const [currentDrinks, setCurrentDrinks] = React.useState(null)
   const [inStock, setInStock] = React.useState(
-    window.localStorage.getItem('inStock') || '',
+    window.localStorage.getItem('inStock') || ''
   )
 
   function handleStockChange(e) {
@@ -56,11 +56,20 @@ export default function App() {
         onStockSubmit={handleStockSubmit}
         inStock={inStock}
       />
-      <button onClick={handleOneIngredientSubmit}>Find drinks missing 1 ingredient</button>
-      <br/>
-      <p>With {mostCommonMissingIngredient(inStock)}, you could make {countDrinksMissingIngredient(mostCommonMissingIngredient(inStock), inStock)} more drinks</p>
-      <DrinkList drinks={currentDrinks} inStock={inStock}/>
-      <footer/>
+      <button onClick={handleOneIngredientSubmit}>
+        Find drinks missing 1 ingredient
+      </button>
+      <br />
+      <p>
+        With {mostCommonMissingIngredient(inStock)}, you could make{' '}
+        {countDrinksMissingIngredient(
+          mostCommonMissingIngredient(inStock),
+          inStock
+        )}{' '}
+        more drinks
+      </p>
+      <DrinkList drinks={currentDrinks} inStock={inStock} />
+      <footer />
     </div>
   )
 }

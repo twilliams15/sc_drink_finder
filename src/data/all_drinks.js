@@ -781,7 +781,12 @@ export default [
   {
     name: 'El Draque',
     page: 163,
-    ingredients: [i.misc.mint, i.syrups.demerara, i.juices.lime, i.rums.cachaca],
+    ingredients: [
+      i.misc.mint,
+      i.syrups.demerara,
+      i.juices.lime,
+      i.rums.cachaca,
+    ],
   },
   {
     name: 'Grog',
@@ -823,7 +828,11 @@ export default [
   {
     name: 'Daiquiri No. 1',
     page: 168,
-    ingredients: [i.juices.lime, i.syrups.demerara, i.rums.blended_lightly_aged],
+    ingredients: [
+      i.juices.lime,
+      i.syrups.demerara,
+      i.rums.blended_lightly_aged,
+    ],
   },
   {
     name: 'Hotel Nacional Special',
@@ -964,7 +973,11 @@ export default [
   {
     name: 'Corn & Oil',
     page: 180,
-    ingredients: [i.liqueurs.falernum, i.rums.blended_aged, i.bitters.angostura],
+    ingredients: [
+      i.liqueurs.falernum,
+      i.rums.blended_aged,
+      i.bitters.angostura,
+    ],
   },
   {
     name: 'Queen’s Park Swizzle',

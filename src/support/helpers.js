@@ -3,7 +3,7 @@ import allDrinks from '../data/all_drinks'
 export function findDrinksByName(searchTerm) {
   if (!searchTerm) return
   return allDrinks.filter((d) =>
-    d.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    d.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 }
 
@@ -26,12 +26,19 @@ export function findDrinksMissingOneIngredient(inStock) {
 
 export function mostCommonMissingIngredient(inStock) {
   return findDrinksMissingOneIngredient(inStock)
-    .map(d => getMissingIngredients(d, inStock))
+    .map((d) => getMissingIngredients(d, inStock))
     .flat()
-    .reduce((a, b, i, arr) =>
-      (arr.filter(v => v === a).length >= arr.filter(v => v === b).length ? a : b), '')
+    .reduce(
+      (a, b, i, arr) =>
+        arr.filter((v) => v === a).length >= arr.filter((v) => v === b).length
+          ? a
+          : b,
+      ''
+    )
 }
 
 export function countDrinksMissingIngredient(ingredient, inStock) {
-  return findDrinksMissingOneIngredient(inStock).filter(d=> drinkHasIngredient(d, ingredient)).length
+  return findDrinksMissingOneIngredient(inStock).filter((d) =>
+    drinkHasIngredient(d, ingredient)
+  ).length
 }

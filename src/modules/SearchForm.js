@@ -11,7 +11,7 @@ export function SearchForm({onNameChange, onIngredientChange}) {
         autoComplete="off"
         onChange={onNameChange}
       />
-      <br/>
+      <br />
       <label htmlFor="ingredient">by ingredient: </label>
       <input
         id="ingredient"
@@ -19,7 +19,7 @@ export function SearchForm({onNameChange, onIngredientChange}) {
         autoComplete="off"
         onChange={onIngredientChange}
       />
-      <br/>
+      <br />
       <label htmlFor="rum">by rum number: </label>
       <select id="rum" onChange={onIngredientChange}>
         <option value="---">-</option>
