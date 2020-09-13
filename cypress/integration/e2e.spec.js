@@ -37,6 +37,13 @@ describe('keeping stock', () => {
     })
   })
 
+  it('reads stock from local storage', () => {
+    localStorage.setItem('inStock', 'herbstura')
+    cy.reload()
+    cy.get('.accordion').click()
+    cy.get('#herbstura').should('be.checked')
+  })
+
   it('search by stock returns correct drinks', () => {
     cy.get('.accordion').click()
     cy.contains('lime juice').click()
