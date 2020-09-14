@@ -56,10 +56,38 @@ describe('keeping stock', () => {
     cy.contains('angostura bitters').click()
     cy.contains('Search by stock').click()
     cy.get('.drink')
-      .should('have.length', 4)
+      .should('have.length', 3)
       .and('include.text', 'Planter’s Punch')
-      .and('include.text', 'Grog')
       .and('include.text', 'Bombo')
       .and('include.text', 'Barbados Rum Punch')
+  })
+})
+
+describe('insights', () => {
+  beforeEach(() => {
+    cy.get('.accordion').click()
+    cy.contains('lime juice').click()
+    cy.contains('demerara syrup').click()
+    cy.contains('allspice dram').click()
+    cy.contains('blended aged rum (3)').click()
+    cy.contains('angostura bitters').click()
+  })
+
+  it('find drinks missing 1 ingredient returns correct drinks', () => {
+    cy.contains('Find drinks missing 1 ingredient').click()
+    cy.get('.drink')
+      .should('have.length', 5)
+      .and('include.text', 'Grog')
+      .and('include.text', 'Rum Flip')
+      .and('include.text', 'Daiquiri No. 1')
+      .and('include.text', 'Corn & Oil')
+      .and('include.text', 'Paniolo Old-Fashioned')
+  })
+
+  it('suggestions appear when more than 1 drink can be made with 1 additional ingredient', () => {
+    cy.contains('lime juice').click()
+    cy.contains('With lime juice, you could make 2 more drinks!').should(
+      'be.visible'
+    )
   })
 })
