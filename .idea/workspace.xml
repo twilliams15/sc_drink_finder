@@ -22,8 +22,6 @@
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/all_drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_drinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/all_ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_ingredients.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <updated>1599941213113</updated>
       <workItem from="1599941214501" duration="5816000" />
       <workItem from="1600028221453" duration="49000" />
-      <workItem from="1600028280425" duration="5229000" />
+      <workItem from="1600028280425" duration="5478000" />
     </task>
     <servers />
   </component>
@@ -148,5 +146,9 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="552" y="263" width="576" height="546" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1599941378908" />
+    <state x="274" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1600050584203">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="274" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600050584203" />
   </component>
 </project>

@@ -59,7 +59,6 @@ export default function App() {
       <button onClick={handleOneIngredientSubmit}>
         Find drinks missing 1 ingredient
       </button>
-      <br />
       {countDrinksMissingMostCommonIngredient(inStock) > 1 && (
         <p>
           With {mostCommonMissingIngredient(inStock)}, you could make{' '}
