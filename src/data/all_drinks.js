@@ -791,7 +791,7 @@ export default [
   {
     name: 'Grog',
     page: 165,
-    ingredients: [i.juices.lime, i.syrups.demerara, i.rums.rum],
+    ingredients: [i.juices.lime, i.syrups.demerara, i.rums.any_rum],
   },
   {
     name: 'Rum Flip',

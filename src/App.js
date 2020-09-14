@@ -62,7 +62,7 @@ export default function App() {
       <br />
       {countDrinksMissingMostCommonIngredient(inStock) > 1 && (
         <p>
-          Note! With {mostCommonMissingIngredient(inStock)}, you could make{' '}
+          With {mostCommonMissingIngredient(inStock)}, you could make{' '}
           {countDrinksMissingMostCommonIngredient(inStock)} more drinks!
         </p>
       )}
