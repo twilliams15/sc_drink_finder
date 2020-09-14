@@ -66,7 +66,7 @@ export default function App() {
         </p>
       )}
       <DrinkList drinks={currentDrinks} inStock={inStock} />
-      <footer />
+      <footer>* missing ingredient</footer>
     </div>
   )
 }
