@@ -39,7 +39,6 @@ export function InStock({onStockChange, onStockSubmit, inStock}) {
           })}
         </ul>
       ))}
-      <button type="submit">Search by stock</button>
     </form>
   )
 }
