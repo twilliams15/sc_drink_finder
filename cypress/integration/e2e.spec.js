@@ -3,27 +3,6 @@ beforeEach(() => {
   cy.visit('/')
 })
 
-describe('searching for drinks', () => {
-  it('search for drink returns correct drink', () => {
-    cy.get('#drinkName').type('zom')
-    cy.get('.drink').should('have.length', 1).and('include.text', 'Zombie')
-  })
-
-  it('search for ingredient returns correct drinks', () => {
-    cy.get('#ingredient').type('spark')
-    cy.get('.drink')
-      .each((d) => d.children())
-      .should('include.text', 'sparkling')
-  })
-
-  it('search for rum number returns correct drinks', () => {
-    cy.get('#rum').select('8')
-    cy.get('.drink')
-      .each((d) => d.children())
-      .should('include.text', 'cane aoc martinique rhum agricole vieux (8)')
-  })
-})
-
 describe('keeping stock', () => {
   it('expanding stock shows stock items', () => {
     cy.get('.stock').should('not.be.visible')
@@ -54,12 +33,36 @@ describe('keeping stock', () => {
     cy.contains('allspice dram').click()
     cy.contains('blended aged rum (3)').click()
     cy.contains('angostura bitters').click()
-    cy.contains('Search by stock').click()
     cy.get('.drink')
       .should('have.length', 3)
       .and('include.text', 'Planter’s Punch')
       .and('include.text', 'Bombo')
       .and('include.text', 'Barbados Rum Punch')
+  })
+})
+
+describe('searching for drinks', () => {
+  beforeEach(() => {
+    cy.contains('Search').click()
+  })
+
+  it('search for drink returns correct drink', () => {
+    cy.get('#drinkName').type('zom')
+    cy.get('.drink').should('have.length', 1).and('include.text', 'Zombie')
+  })
+
+  it('search for ingredient returns correct drinks', () => {
+    cy.get('#ingredient').type('spark')
+    cy.get('.drink')
+      .each((d) => d.children())
+      .should('include.text', 'sparkling')
+  })
+
+  it('search for rum number returns correct drinks', () => {
+    cy.get('#rum').select('8')
+    cy.get('.drink')
+      .each((d) => d.children())
+      .should('include.text', 'cane aoc martinique rhum agricole vieux (8)')
   })
 })
 
@@ -71,10 +74,11 @@ describe('insights', () => {
     cy.contains('allspice dram').click()
     cy.contains('blended aged rum (3)').click()
     cy.contains('angostura bitters').click()
+
+    cy.contains('Insights').click()
   })
 
   it('find drinks missing 1 ingredient returns correct drinks', () => {
-    cy.contains('Find drinks missing 1 ingredient').click()
     cy.get('.drink')
       .should('have.length', 5)
       .and('include.text', 'Grog')
@@ -85,7 +89,9 @@ describe('insights', () => {
   })
 
   it('suggestions appear when more than 1 drink can be made with 1 additional ingredient', () => {
+    cy.contains('In Stock').click()
     cy.contains('lime juice').click()
+    cy.contains('Insights').click()
     cy.contains('With lime juice, you could make 2 more drinks!').should(
       'be.visible'
     )
