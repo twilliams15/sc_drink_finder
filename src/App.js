@@ -101,6 +101,7 @@ export default function App() {
         inStock={inStock}
       />
       <DrinkList drinks={currentDrinks} inStock={inStock} />
+      <footer />
     </div>
   )
 }
