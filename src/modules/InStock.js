@@ -17,7 +17,9 @@ export function InStock({onStockChange, inStock}) {
   return (
     <form id="in-stock">
       <p className="accordion" onClick={toggleAccordion}>
-        In stock <em>({symbol})</em>
+        <strong>
+          In stock <em>({symbol})</em>
+        </strong>
       </p>
       {[...Object.keys(allIngredients)].sort().map((c) => (
         <ul key={c} className="stock">
@@ -39,6 +41,7 @@ export function InStock({onStockChange, inStock}) {
           })}
         </ul>
       ))}
+      <p>With what you have in stock...</p>
     </form>
   )
 }
