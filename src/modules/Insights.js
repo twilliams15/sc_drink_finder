@@ -4,17 +4,24 @@ import {
   mostCommonMissingIngredient,
 } from '../support/helpers'
 
-export function Insights({handleOneIngredientSubmit, inStock}) {
+export function Insights({inStock}) {
   return (
     <div id="insights">
-      <button onClick={handleOneIngredientSubmit}>
-        Find drinks missing 1 ingredient
-      </button>
-      {countDrinksMissingMostCommonIngredient(inStock) > 1 && (
-        <p>
-          With {mostCommonMissingIngredient(inStock)}, you could make{' '}
-          {countDrinksMissingMostCommonIngredient(inStock)} more drinks!
-        </p>
+      {countDrinksMissingMostCommonIngredient(inStock) > 1 ? (
+        <>
+          <p>
+            <strong>
+              With {mostCommonMissingIngredient(inStock)}, you could make{' '}
+              {countDrinksMissingMostCommonIngredient(inStock)} more drinks!
+            </strong>
+          </p>
+          <p>
+            They’re listed below, along with the drinks missing just 1
+            ingredient...
+          </p>
+        </>
+      ) : (
+        <p>Here are the drinks missing just 1 ingredient...</p>
       )}
     </div>
   )

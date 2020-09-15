@@ -35,15 +35,42 @@ export default function App() {
     window.localStorage.setItem('inStock', stock)
   }
 
-  function handleOneIngredientSubmit() {
+  function onOneIngredientSubmit() {
     setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
   }
 
-  function displayInStock() {}
+  function displayInStock() {
+    document.getElementById('in-stock').style.display = 'block'
+    ;[
+      document.getElementById('search'),
+      document.getElementById('insights'),
+    ].forEach((m) => {
+      m.style.display = 'none'
+    })
+    setCurrentDrinks(getCurrentDrinks(inStock))
+  }
 
-  function displaySearch() {}
+  function displaySearch() {
+    document.getElementById('search').style.display = 'block'
+    ;[
+      document.getElementById('in-stock'),
+      document.getElementById('insights'),
+    ].forEach((m) => {
+      m.style.display = 'none'
+    })
+    setCurrentDrinks([])
+  }
 
-  function displayInsights() {}
+  function displayInsights() {
+    document.getElementById('insights').style.display = 'block'
+    ;[
+      document.getElementById('search'),
+      document.getElementById('in-stock'),
+    ].forEach((m) => {
+      m.style.display = 'none'
+    })
+    setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
+  }
 
   function displayShopping() {}
 
@@ -58,7 +85,11 @@ export default function App() {
           <li onClick={displayShopping}>Shopping</li>
         </ul>
       </nav>
-      <InStock onStockChange={handleStockChange} inStock={inStock} />
+      <InStock
+        onStockChange={handleStockChange}
+        inStock={inStock}
+        onOneIngredientSubmit={onOneIngredientSubmit}
+      />
       <SearchForm
         onNameChange={(e) => setCurrentDrinks(findDrinksByName(e.target.value))}
         onIngredientChange={(e) =>
@@ -66,7 +97,7 @@ export default function App() {
         }
       />
       <Insights
-        handleOneIngredientSubmit={handleOneIngredientSubmit}
+        onOneIngredientSubmit={onOneIngredientSubmit}
         inStock={inStock}
       />
       <DrinkList drinks={currentDrinks} inStock={inStock} />

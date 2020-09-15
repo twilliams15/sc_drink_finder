@@ -1,7 +1,7 @@
 import React from 'react'
 import allIngredients from '../data/all_ingredients'
 
-export function InStock({onStockChange, onStockSubmit, inStock}) {
+export function InStock({onStockChange, inStock}) {
   const [symbol, setSymbol] = React.useState('+')
 
   function toggleAccordion() {
@@ -15,7 +15,7 @@ export function InStock({onStockChange, onStockSubmit, inStock}) {
   }
 
   return (
-    <form id="in-stock" onSubmit={onStockSubmit}>
+    <form id="in-stock">
       <p className="accordion" onClick={toggleAccordion}>
         In stock <em>({symbol})</em>
       </p>
