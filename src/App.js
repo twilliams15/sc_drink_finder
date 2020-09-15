@@ -72,8 +72,6 @@ export default function App() {
     setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
   }
 
-  function displayShopping() {}
-
   return (
     <div>
       <h1>SC Drink Finder</h1>
@@ -82,7 +80,6 @@ export default function App() {
           <li onClick={displayInStock}>In Stock</li>
           <li onClick={displaySearch}>Search</li>
           <li onClick={displayInsights}>Insights</li>
-          <li onClick={displayShopping}>Shopping</li>
         </ul>
       </nav>
       <InStock
