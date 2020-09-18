@@ -9,7 +9,7 @@ export function DrinkList({drinks, inStock}) {
     ))
   }
   return (
-    <div className="drink-list">
+    <div id="drink-list">
       <p>
         {drinkList.length} {drinkList.length === 1 ? 'drink' : 'drinks'} found
       </p>

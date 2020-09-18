@@ -51,7 +51,7 @@ footer {
   display: none;
 }
 
-#shopping {
+#rums {
   display: none;
 }
 
@@ -74,4 +74,17 @@ footer {
 
 .page {
   font-size: 1.25rem;
+}
+
+.origin {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.rum {
+  display: none;
+}
+
+#rums ul {
+  padding: 0;
 }
