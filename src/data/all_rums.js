@@ -63,6 +63,97 @@ export default [
           },
         ],
       },
+      {
+        type: 'Blended Lightly Aged (2)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Blended Aged (3)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Column Still Aged (4)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Black Blended (5)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Black Blended Overproof (6)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Cane AOC Martinique Rhum Agricole Blanc (7)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
+      {
+        type: 'Cane AOC Martinique Rhum Agricole Vieux (8)',
+        rums: [
+          {
+            name: '',
+            origin: '',
+          },
+          {
+            name: '',
+            origin: '',
+          },
+        ],
+      },
     ],
   },
 ]
