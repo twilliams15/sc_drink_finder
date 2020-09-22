@@ -67,12 +67,52 @@ export default [
         type: 'Blended Lightly Aged (2)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Appleton Estate Signature Blend',
+            origin: 'Jamaica',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Banks 5 Island & 7 Island',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Cartavia Selecto 5',
+            origin: 'Peru',
+          },
+          {
+            name: 'Chairman’s Reserve Silver',
+            origin: 'St. Lucia',
+          },
+          {
+            name: 'Cockspur Fine',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Denizen',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Diplomatico Añejo & Blanco',
+            origin: 'Venezuela',
+          },
+          {
+            name: 'El Dorado 3 Year',
+            origin: 'Guyana',
+          },
+          {
+            name: 'Mount Gay Eclipse',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Plantation 3 Star',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Real McCoy 3 Year',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Santa Teresa Claro',
+            origin: 'Venezuela',
           },
         ],
       },
@@ -80,12 +120,72 @@ export default [
         type: 'Blended Aged (3)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Appleton Estate Reserve Blend & Rare Blend 12',
+            origin: 'Jamaica',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Cadenhead Green Label',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Cartavio Selecto 12 & 18',
+            origin: 'Peru',
+          },
+          {
+            name: 'Chairman’s Reserve & Forgotten Casks',
+            origin: 'St. Lucia',
+          },
+          {
+            name: 'Cockspur 12',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Denizen Merchant’s Reserve',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Diplomatico Reserva & Reserva Exclusiva',
+            origin: 'Venezuela',
+          },
+          {
+            name: 'Doorly’s 5 Year, 12 Year, & XO',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Dos Maderas 5+3 and 5+5',
+            origin: 'regional blend',
+          },
+          {
+            name: 'El Dorado 5 Year, 8 Year, & 12 Year',
+            origin: 'Guyana',
+          },
+          {
+            name: 'Kaniché XO',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Mount Gay Black Barrel & XO',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Plantation 5 Year Grand Reserve & 20th Anniversary',
+            origin: 'Barbados',
+          },
+          {
+            name: 'Providencia',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Pusser’s',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Real McCoy 5 Year & 12 Year',
+            origin: 'Barbados',
+          },
+          {
+            name: 'RL Seale 9 Year Port Cask Finish & 10 Year',
+            origin: 'Barbados',
           },
         ],
       },

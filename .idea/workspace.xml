@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/all_rums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_rums.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Rums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Rums.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,19 +61,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -106,7 +90,8 @@
       <workItem from="1600028280425" duration="6599000" />
       <workItem from="1600130156536" duration="6446000" />
       <workItem from="1600140868181" duration="192000" />
-      <workItem from="1600397602436" duration="3928000" />
+      <workItem from="1600397602436" duration="4024000" />
+      <workItem from="1600466582180" duration="53000" />
     </task>
     <servers />
   </component>
@@ -126,26 +111,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1174" height="289" key="GridCell.Tab.0.bottom" timestamp="1600400710847">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1174" height="289" key="GridCell.Tab.0.bottom" timestamp="1600466548368">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1174" height="289" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710847" />
-    <state width="1636" height="275" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600014250634" />
-    <state width="1174" height="289" key="GridCell.Tab.0.center" timestamp="1600400710845">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1174" height="289" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548368" />
+    <state width="1174" height="289" key="GridCell.Tab.0.center" timestamp="1600466548367">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1174" height="289" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710845" />
-    <state width="1636" height="275" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600014250633" />
-    <state width="1174" height="289" key="GridCell.Tab.0.left" timestamp="1600400710844">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1174" height="289" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548367" />
+    <state width="1174" height="289" key="GridCell.Tab.0.left" timestamp="1600466548366">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1174" height="289" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710844" />
-    <state width="1636" height="275" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600014250632" />
-    <state width="1174" height="289" key="GridCell.Tab.0.right" timestamp="1600400710846">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1174" height="289" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548366" />
+    <state width="1174" height="289" key="GridCell.Tab.0.right" timestamp="1600466548367">
+      <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="1174" height="289" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710846" />
-    <state width="1636" height="275" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600014250633" />
+    <state width="1174" height="289" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548367" />
     <state x="118" y="164" key="SettingsEditor" timestamp="1600031968890">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
