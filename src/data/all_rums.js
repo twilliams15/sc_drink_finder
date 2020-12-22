@@ -193,12 +193,92 @@ export default [
         name: 'Column Still Aged (4)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Admiral Rodney',
+            origin: 'St. Lucia',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Angostura 1824, 1919, 5 Year, and 7 Year',
+            origin: 'Trinidad',
+          },
+          {
+            name: 'Bacardi 8 and Reserva Limitada',
+            origin: 'Bahamas/Puerto Rico',
+          },
+          {
+            name: 'Brugal 1888 and Extra Viejo',
+            origin: 'Dominican Republic',
+          },
+          {
+            name: 'Caña Brava 7 Year',
+            origin: 'Panama',
+          },
+          {
+            name: 'Cruzan Single Barrel',
+            origin: 'U.S. Virgin Islands',
+          },
+          {
+            name: 'Don Pancho Origines 8',
+            origin: 'Panama',
+          },
+          {
+            name: 'Don Q Añejo and Gran Añejo',
+            origin: 'Puerto Rico',
+          },
+          {
+            name: 'El Dorado Single Barrel EHP and Single Barrel ICBU',
+            origin: 'Guyana',
+          },
+          {
+            name: 'English Harbour 5 and 10',
+            origin: 'Antigua',
+          },
+          {
+            name: 'Facundo Eximo, Exquisito, and Paraiso',
+            origin: 'Bahamas/Puerto Rico',
+          },
+          {
+            name: 'Flor de Caña',
+            origin: 'Puerto Rico',
+          },
+          {
+            name: 'Kirk & Sweeney 12, 18, and 23',
+            origin: 'Dominican Republic',
+          },
+          {
+            name: 'Ron Abuelo 12, 7, Centuria',
+            origin: 'Panama',
+          },
+          {
+            name: 'Ron Botran Reserva and Solera 1893',
+            origin: 'Guatemala',
+          },
+          {
+            name: 'Ron Cenenario 9, 12, 20, and 25',
+            origin: 'Guatemala',
+          },
+          {
+            name: 'Ron Del Barrilito 3 Star',
+            origin: 'Puerto Rico',
+          },
+          {
+            name: 'Ron Matusalem 15',
+            origin: 'Dominican Republic',
+          },
+          {
+            name: 'Trigo',
+            origin: 'Puerto Rico',
+          },
+          {
+            name: 'Westerhall Plantation',
+            origin: 'Grenada',
+          },
+          {
+            name: 'Zacapa 23 and XO',
+            origin: 'Guatemala',
+          },
+          {
+            name: 'Zafra',
+            origin: 'Panama',
           },
         ],
       },
@@ -206,12 +286,40 @@ export default [
         name: 'Black Blended (5)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Coruba',
+            origin: 'Jamaica',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Gosling’s Black Seal',
+            origin: 'regional blend',
+          },
+          {
+            name: 'Hamilton Guyana 86',
+            origin: 'Guyana',
+          },
+          {
+            name: 'Kohala Bay',
+            origin: 'Jamaica',
+          },
+          {
+            name: 'Lemon Hart 80',
+            origin: 'Guyana',
+          },
+          {
+            name: 'Pampero Anniversario',
+            origin: 'Venezuela',
+          },
+          {
+            name: 'Newfoundland Screech',
+            origin: 'Jamaica',
+          },
+          {
+            name: 'Blackwell’s Black Gold',
+            origin: 'Jamaica',
+          },
+          {
+            name: 'Skipper Finest Old Demerara',
+            origin: 'Guyana',
           },
         ],
       },
@@ -219,25 +327,46 @@ export default [
         name: 'Black Blended Overproof (6)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Hamilton Guyana 151',
+            origin: 'Guyana',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Lemon Hart 151',
+            origin: 'Guyana',
+          },
+          {
+            name: 'Plantation O.F.T.D.',
+            origin: 'regional blend',
           },
         ],
       },
+    ],
+  },
+  {
+    class: 'Fresh Cane Juice Rums',
+    types: [
       {
         name: 'Cane AOC Martinique Rhum Agricole Blanc (7)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Clément Première Canne and Canne Bleue',
+            origin: 'Martinique',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Duquesne Blanc',
+            origin: 'Martinique',
+          },
+          {
+            name: 'La Favorite Blanc',
+            origin: 'Martinique',
+          },
+          {
+            name: 'Neisson Blanc, Le Rhum, and L’Esprit Overproof',
+            origin: 'Martinique',
+          },
+          {
+            name: 'Rhum J.M White 100 Proof',
+            origin: 'Martinique',
           },
         ],
       },
@@ -245,12 +374,24 @@ export default [
         name: 'Cane AOC Martinique Rhum Agricole Vieux (8)',
         rums: [
           {
-            name: '',
-            origin: '',
+            name: 'Clément V.S.O.P., 6 Year Très Vieux, and 10 Year Très Vieux',
+            origin: 'Martinique',
           },
           {
-            name: '',
-            origin: '',
+            name: 'Duquesne Élevé Sous Bois',
+            origin: 'Martinique',
+          },
+          {
+            name: 'La Favorite Coeur de Ambré and Vieux',
+            origin: 'Martinique',
+          },
+          {
+            name: 'Neisson Élevé Sous Bois and Réserve Spéciale',
+            origin: 'Martinique',
+          },
+          {
+            name: 'Rhum J.M E.S.B. Gold and V.S.O.P.',
+            origin: 'Martinique',
           },
         ],
       },
