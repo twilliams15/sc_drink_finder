@@ -20,18 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/__tests__/Drink.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/__tests__/Drink.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress.json" beforeDir="false" afterPath="$PROJECT_DIR$/cypress.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/commands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/DrinkList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/DrinkList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +67,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,7 +76,7 @@
       <recent name="$PROJECT_DIR$/cypress/integration" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.test">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -117,8 +110,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.cy:open" />
       </list>
@@ -142,6 +146,7 @@
       <workItem from="1600742022601" duration="1523000" />
       <workItem from="1602606092348" duration="3975000" />
       <workItem from="1603398444660" duration="1412000" />
+      <workItem from="1608667566842" duration="2086000" />
     </task>
     <servers />
   </component>
@@ -159,64 +164,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1748" height="279" key="GridCell.Tab.0.bottom" timestamp="1603401929670">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1603400759577">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.bottom.inPresentationMode/0.23.1792.1039@0.23.1792.1039" timestamp="1603400759577" />
-    <state width="1174" height="289" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710847" />
-    <state width="1174" height="289" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548368" />
-    <state width="1748" height="279" key="GridCell.Tab.0.bottom/0.23.1792.1039@0.23.1792.1039" timestamp="1603401929670" />
-    <state width="1748" height="279" key="GridCell.Tab.0.center" timestamp="1603401929670">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1603400759576">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.center.inPresentationMode/0.23.1792.1039@0.23.1792.1039" timestamp="1603400759576" />
-    <state width="1174" height="289" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710845" />
-    <state width="1174" height="289" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548367" />
-    <state width="1748" height="279" key="GridCell.Tab.0.center/0.23.1792.1039@0.23.1792.1039" timestamp="1603401929670" />
-    <state width="1748" height="279" key="GridCell.Tab.0.left" timestamp="1603401929669">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1603400759576">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.left.inPresentationMode/0.23.1792.1039@0.23.1792.1039" timestamp="1603400759576" />
-    <state width="1174" height="289" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710844" />
-    <state width="1174" height="289" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548366" />
-    <state width="1748" height="279" key="GridCell.Tab.0.left/0.23.1792.1039@0.23.1792.1039" timestamp="1603401929669" />
-    <state width="1748" height="279" key="GridCell.Tab.0.right" timestamp="1603401929670">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1603400759576">
-      <screen x="0" y="23" width="1792" height="1039" />
-    </state>
-    <state width="1748" height="279" key="GridCell.Tab.0.right.inPresentationMode/0.23.1792.1039@0.23.1792.1039" timestamp="1603400759576" />
-    <state width="1174" height="289" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1600400710846" />
-    <state width="1174" height="289" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1600466548367" />
-    <state width="1748" height="279" key="GridCell.Tab.0.right/0.23.1792.1039@0.23.1792.1039" timestamp="1603401929670" />
-    <state x="118" y="164" key="SettingsEditor" timestamp="1600031968890">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="118" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1600031968890" />
-    <state x="552" y="245" width="576" height="559" key="find.popup" timestamp="1600400355137">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="552" y="245" width="576" height="559" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600400355137" />
-    <state x="552" y="263" width="576" height="546" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1599941378908" />
-    <state x="449" y="296" key="refactoring.ChangeSignatureDialog" timestamp="1600138030414">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="449" y="296" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600138030414" />
-    <state x="274" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1600398168238">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="274" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1600398168238" />
   </component>
 </project>
