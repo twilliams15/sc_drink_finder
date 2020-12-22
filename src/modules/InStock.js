@@ -5,25 +5,30 @@ export function InStock({onStockChange, inStock}) {
   const [symbol, setSymbol] = React.useState('+')
 
   function toggleAccordion() {
+    [...document.getElementsByClassName('stock')].forEach(toggleItemDisplay)
+    toggleSymbol()
+  }
+
+  function toggleSymbol() {
     symbol === '+' ? setSymbol('–') : setSymbol('+')
-    const stockItems = document.getElementsByClassName('stock')
-    ;[...stockItems].forEach((i) =>
-      i.style.display === 'block'
-        ? (i.style.display = 'none')
-        : (i.style.display = 'block')
-    )
+  }
+
+  function toggleItemDisplay(item) {
+    item.style.display === 'block'
+      ? (item.style.display = 'none')
+      : (item.style.display = 'block')
   }
 
   return (
     <form id="in-stock">
       <p className="accordion" onClick={toggleAccordion}>
         <strong>
-          In stock <em>({symbol})</em>
+          Current stock <em>({symbol})</em>
         </strong>
       </p>
       {[...Object.keys(allIngredients)].sort().map((c) => (
         <ul key={c} className="stock">
-          {c}
+          ~{c}~
           {[...Object.keys(allIngredients[c])].sort().map((i) => {
             return (
               <li key={allIngredients[c][i]} className="stock">

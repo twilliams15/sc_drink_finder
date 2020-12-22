@@ -13,31 +13,30 @@ import {Insights} from './modules/Insights'
 import {Rums} from './modules/Rums'
 
 export default function App() {
-  const [inStock, setInStock] = React.useState(
-    window.localStorage.getItem('inStock') || ''
+  const [stock, setStock] = React.useState(
+    window.localStorage.getItem('stock') || ''
   )
-  const [currentDrinks, setCurrentDrinks] = React.useState(
-    getCurrentDrinks(inStock)
+  const [displayedDrinks, setDisplayedDrinks] = React.useState(
+    getAvailableDrinks(stock)
   )
 
-  function getCurrentDrinks(inStock) {
+  function getAvailableDrinks(fromStock = stock) {
     return allDrinks.filter((d) =>
-      d.ingredients.every((i) => inStock.includes(i))
+      d.ingredients.every((i) => fromStock.includes(i))
     )
   }
 
   function handleStockChange(e) {
-    let stock = inStock
-    e.target.checked
-      ? (stock += e.target.id)
-      : (stock = stock.replace(e.target.id, ''))
-    setInStock(stock)
-    setCurrentDrinks(getCurrentDrinks(stock))
-    window.localStorage.setItem('inStock', stock)
-  }
-
-  function onOneIngredientSubmit() {
-    setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
+    let tempStock = stock
+    const item = e.target;
+    const addItemToTempStock = () => tempStock += item.id
+    const removeItemFromTempStock = () => tempStock = tempStock.replace(item.id, '')
+    item.checked
+      ? addItemToTempStock()
+      : removeItemFromTempStock()
+    setStock(tempStock)
+    window.localStorage.setItem('stock', tempStock)
+    setDisplayedDrinks(getAvailableDrinks(tempStock))
   }
 
   function displayInStock() {
@@ -50,7 +49,7 @@ export default function App() {
     ].forEach((m) => {
       m.style.display = 'none'
     })
-    setCurrentDrinks(getCurrentDrinks(inStock))
+    setDisplayedDrinks(getAvailableDrinks())
   }
 
   function displaySearch() {
@@ -63,7 +62,7 @@ export default function App() {
     ].forEach((m) => {
       m.style.display = 'none'
     })
-    setCurrentDrinks([])
+    setDisplayedDrinks([])
   }
 
   function displayInsights() {
@@ -76,7 +75,7 @@ export default function App() {
     ].forEach((m) => {
       m.style.display = 'none'
     })
-    setCurrentDrinks(findDrinksMissingOneIngredient(inStock))
+    setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
   }
 
   function displayRums() {
@@ -93,7 +92,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>SC Drink Finder</h1>
+      <h1>Smuggler’s Companion</h1>
       <nav>
         <ul>
           <li onClick={displayInStock}>In Stock</li>
@@ -104,21 +103,19 @@ export default function App() {
       </nav>
       <InStock
         onStockChange={handleStockChange}
-        inStock={inStock}
-        onOneIngredientSubmit={onOneIngredientSubmit}
+        inStock={stock}
       />
       <SearchForm
-        onNameChange={(e) => setCurrentDrinks(findDrinksByName(e.target.value))}
+        onNameChange={(e) => setDisplayedDrinks(findDrinksByName(e.target.value))}
         onIngredientChange={(e) =>
-          setCurrentDrinks(findDrinksByIngredient(e.target.value))
+          setDisplayedDrinks(findDrinksByIngredient(e.target.value))
         }
       />
       <Insights
-        onOneIngredientSubmit={onOneIngredientSubmit}
-        inStock={inStock}
+        inStock={stock}
       />
       <Rums />
-      <DrinkList drinks={currentDrinks} inStock={inStock} />
+      <DrinkList drinks={displayedDrinks} inStock={stock} />
       <footer />
     </div>
   )

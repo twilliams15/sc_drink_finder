@@ -15,12 +15,12 @@ describe('keeping stock', () => {
     cy.get('#herbstura')
       .check()
       .then(() => {
-        expect(localStorage.getItem('inStock')).to.equal('herbstura')
+        expect(localStorage.getItem('stock')).to.equal('herbstura')
       })
   })
 
   it('reads stock from local storage', () => {
-    localStorage.setItem('inStock', 'herbstura')
+    localStorage.setItem('stock', 'herbstura')
     cy.reload()
     cy.get('.accordion').click()
     cy.get('#herbstura').should('be.checked')
