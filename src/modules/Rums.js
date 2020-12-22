@@ -2,6 +2,14 @@ import React from 'react'
 import allRums from '../data/all_rums'
 
 export function Rums() {
+  function toc(rumList) {
+    return rumList.types.map(rumType => (
+      <li>
+        <a href={`#${rumType.name}`}>{rumType.name}</a>
+      </li>
+    ))
+  }
+
   function rumListElement(rumList) {
     return (
       <>
@@ -14,7 +22,7 @@ export function Rums() {
   function rumTypesElement(rumType) {
     return (
       <>
-        <h3>{rumType.name}</h3>
+        <h3 id={rumType.name}>{rumType.name}</h3>
         {rumType.rums.map(rumElement)}
       </>
     )
@@ -24,16 +32,19 @@ export function Rums() {
     return (
       <li>
         {rum.name}
-        <br />
+        <br/>
         <span className="origin">{rum.origin}</span>
-        <br />
-        <br />
+        <br/>
+        <br/>
       </li>
     )
   }
 
   return (
     <div id="rums">
+      <ul className="rum-toc">
+        {allRums.map(toc)}
+      </ul>
       {allRums.map(rumListElement)}
     </div>
   )
