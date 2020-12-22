@@ -3,7 +3,7 @@ export default [
     class: 'Molasses and Evaporated Cane Rums',
     types: [
       {
-        type: 'Pot Still Lightly Aged (1)',
+        name: 'Pot Still Lightly Aged (1)',
         rums: [
           {
             name: 'Ballast Point Three Sheets Aged',
@@ -64,7 +64,7 @@ export default [
         ],
       },
       {
-        type: 'Blended Lightly Aged (2)',
+        name: 'Blended Lightly Aged (2)',
         rums: [
           {
             name: 'Appleton Estate Signature Blend',
@@ -117,7 +117,7 @@ export default [
         ],
       },
       {
-        type: 'Blended Aged (3)',
+        name: 'Blended Aged (3)',
         rums: [
           {
             name: 'Appleton Estate Reserve Blend & Rare Blend 12',
@@ -190,7 +190,7 @@ export default [
         ],
       },
       {
-        type: 'Column Still Aged (4)',
+        name: 'Column Still Aged (4)',
         rums: [
           {
             name: '',
@@ -203,7 +203,7 @@ export default [
         ],
       },
       {
-        type: 'Black Blended (5)',
+        name: 'Black Blended (5)',
         rums: [
           {
             name: '',
@@ -216,7 +216,7 @@ export default [
         ],
       },
       {
-        type: 'Black Blended Overproof (6)',
+        name: 'Black Blended Overproof (6)',
         rums: [
           {
             name: '',
@@ -229,7 +229,7 @@ export default [
         ],
       },
       {
-        type: 'Cane AOC Martinique Rhum Agricole Blanc (7)',
+        name: 'Cane AOC Martinique Rhum Agricole Blanc (7)',
         rums: [
           {
             name: '',
@@ -242,7 +242,7 @@ export default [
         ],
       },
       {
-        type: 'Cane AOC Martinique Rhum Agricole Vieux (8)',
+        name: 'Cane AOC Martinique Rhum Agricole Vieux (8)',
         rums: [
           {
             name: '',

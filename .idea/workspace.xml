@@ -21,11 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Drink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/DrinkList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/DrinkList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/InStock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/InStock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/all_rums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/all_rums.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Rums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Rums.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +144,7 @@
       <workItem from="1600742022601" duration="1523000" />
       <workItem from="1602606092348" duration="3975000" />
       <workItem from="1603398444660" duration="1412000" />
-      <workItem from="1608667566842" duration="5006000" />
+      <workItem from="1608667566842" duration="5696000" />
     </task>
     <servers />
   </component>
