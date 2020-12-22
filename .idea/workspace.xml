@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Rums.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Rums.js" afterDir="false" />
-    </list>
+    <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +140,7 @@
       <workItem from="1600742022601" duration="1523000" />
       <workItem from="1602606092348" duration="3975000" />
       <workItem from="1603398444660" duration="1412000" />
-      <workItem from="1608667566842" duration="7770000" />
+      <workItem from="1608667566842" duration="8089000" />
     </task>
     <servers />
   </component>

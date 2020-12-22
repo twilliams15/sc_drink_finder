@@ -16,7 +16,7 @@ export function Insights({inStock}) {
             </strong>
           </p>
           <p>
-            They’re listed below, along with the drinks missing just 1
+            They’re listed below, along with the other drinks missing just 1
             ingredient...
           </p>
         </>
