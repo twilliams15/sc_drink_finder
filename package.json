@@ -1,35 +1,30 @@
 {
-  "name": "sc-drink-finder",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.js",
-  "dependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-scripts": "3.4.3"
-  },
-  "devDependencies": {
-    "@percy/cypress": "^2.3.2",
-    "@testing-library/cypress": "^7.0.1",
-    "cypress": "^5.3.0",
-    "cypress-react-unit-test": "^4.16.0",
-    "prettier": "^2.1.2",
-    "typescript": "3.8.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "percy": "export PERCY_TOKEN=c56e758ddb6b24551674ddc6c431b24735338c18f5f8ba0967ce1cc0274370aa; percy exec -- npm run cy:run"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "name": "sc-drink-finder",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "main": "src/index.js",
+    "dependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-scripts": "4.0.3"
+    },
+    "devDependencies": {
+        "@testing-library/cypress": "^7.0.6",
+        "cypress": "^7.5.0",
+        "prettier": "^2.3.1",
+        "typescript": "^4.3.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
 }

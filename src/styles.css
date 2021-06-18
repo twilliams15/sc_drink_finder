@@ -1,88 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&display=swap');
 
 body {
-  font-family: 'Cormorant Upright', serif;
-  font-size: 18px;
-  background-color: whitesmoke;
+    font-family: 'Cormorant Upright', serif;
+    font-size: 18px;
+    background-color: whitesmoke;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 h2 {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 h3 {
-  text-transform: uppercase;
-  font-size: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
 }
 
 section {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 ul {
-  padding-left: 1rem;
+    padding-left: 1rem;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  color: black;
+    color: black;
 }
 
 footer {
-  margin-top: 5rem;
+    margin-top: 5rem;
 }
 
 #search {
-  display: none;
+    display: none;
 }
 
 #insights {
-  display: none;
+    display: none;
 }
 
 #rums {
-  display: none;
+    display: none;
 }
 
 .module {
-  display: none;
+    display: none;
 }
 
 .drink {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .stock {
-  display: none;
+    display: none;
 }
 
 .ingredients {
-  text-indent: 1rem;
-  margin-top: 0;
+    text-indent: 1rem;
+    margin-top: 0;
 }
 
 .page {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .origin {
-  font-size: 0.9rem;
-  font-style: italic;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 #rums ul {
-  padding: 0;
+    padding: 0;
 }

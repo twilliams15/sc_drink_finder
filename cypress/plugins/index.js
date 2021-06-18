@@ -12,15 +12,13 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-let percyHealthCheck = require('@percy/cypress/task')
-
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-    on("task", percyHealthCheck);
-
-    require('cypress-react-unit-test/plugins/react-scripts')(on, config)
+    if (config.testingType === 'component') {
+        require('@cypress/react/plugins/react-scripts')(on, config)
+    }
 
     return config
 }
