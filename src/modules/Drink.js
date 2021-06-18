@@ -14,7 +14,7 @@ export function Drink({drink, inStock}) {
         return (
             <>
                 {drink.ingredients.map(i => (
-                    <li key={i}>
+                    <li key={i} aria-label={i}>
                         {inStock.includes(i) ? i : highlightListItem(i)}
                     </li>
                 ))}
@@ -28,7 +28,7 @@ export function Drink({drink, inStock}) {
 
     return (
         <div className="drink">
-            <h2>{nameAndPage(drink)}</h2>
+            <h2 aria-label={drink.name}>{nameAndPage(drink)}</h2>
             <section className="ingredients">
                 {ingredientsList(drink, inStock)}
             </section>
