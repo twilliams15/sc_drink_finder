@@ -6,6 +6,7 @@ import {
     findDrinksMissingOneIngredient,
     getAvailableDrinks,
 } from './support/helpers'
+import nav from './support/nav'
 import {SearchForm} from './modules/SearchForm'
 import {InStock} from './modules/InStock'
 import {DrinkList} from './modules/DrinkList'
@@ -45,47 +46,19 @@ export default function App() {
         setDisplayedDrinks(findDrinksByIngredient(e.target.value))
     }
 
-    function show(elementId) {
-        document.getElementById(elementId).style.display = 'block'
-    }
-
-    function hide(elementId) {
-        document.getElementById(elementId).style.display = 'none'
-    }
-
     function displayInStock() {
-        show('in-stock')
-        show('drink-list')
-        hide('search')
-        hide('insights')
-        hide('rums')
+        nav.displayInStock()
         setDisplayedDrinks(getAvailableDrinks(stock))
     }
 
     function displaySearch() {
-        show('search')
-        show('drink-list')
-        hide('in-stock')
-        hide('insights')
-        hide('rums')
+        nav.displaySearch()
         setDisplayedDrinks([])
     }
 
     function displayInsights() {
-        show('insights')
-        show('drink-list')
-        hide('search')
-        hide('in-stock')
-        hide('rums')
+        nav.displayInsights()
         setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
-    }
-
-    function displayRums() {
-        show('rums')
-        hide('search')
-        hide('in-stock')
-        hide('insights')
-        hide('drink-list')
     }
 
     function NavBar() {
@@ -95,7 +68,7 @@ export default function App() {
                     <li onClick={displayInStock}>In Stock</li>
                     <li onClick={displaySearch}>Search</li>
                     <li onClick={displayInsights}>Insights</li>
-                    <li onClick={displayRums}>Rums</li>
+                    <li onClick={nav.displayRums}>Rums</li>
                 </ul>
             </nav>
         )
