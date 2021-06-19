@@ -3,17 +3,19 @@ import {
     countDrinksMissingMostCommonIngredient,
     mostCommonMissingIngredient,
 } from '../support/helpers'
+import {CurrentStock} from '../App'
 
-export function Insights({inStock}) {
+export function Insights() {
+    const stock = React.useContext(CurrentStock)
+
     return (
         <div id="insights">
-            {countDrinksMissingMostCommonIngredient(inStock) > 1 ? (
+            {countDrinksMissingMostCommonIngredient(stock) > 1 ? (
                 <>
                     <p>
                         <strong>
-                            With {mostCommonMissingIngredient(inStock)}, you
-                            could make{' '}
-                            {countDrinksMissingMostCommonIngredient(inStock)}{' '}
+                            With {mostCommonMissingIngredient(stock)}, you could
+                            make {countDrinksMissingMostCommonIngredient(stock)}{' '}
                             more drinks!
                         </strong>
                     </p>

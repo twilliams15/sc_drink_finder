@@ -1,7 +1,9 @@
 import React from 'react'
 import allIngredients from '../data/all_ingredients'
+import {CurrentStock} from '../App'
 
-export function InStock({onStockChange, inStock}) {
+export function InStock({onStockChange}) {
+    const stock = React.useContext(CurrentStock)
     const [symbol, setSymbol] = React.useState('+')
 
     function toggleAccordion() {
@@ -38,7 +40,7 @@ export function InStock({onStockChange, inStock}) {
                                     id={allIngredients[c][i]}
                                     type="checkbox"
                                     onChange={onStockChange}
-                                    checked={inStock.includes(
+                                    checked={stock.includes(
                                         allIngredients[c][i]
                                     )}
                                 />

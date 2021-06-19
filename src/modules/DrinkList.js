@@ -1,32 +1,27 @@
 import React from 'react'
 import {Drink} from './Drink'
+import {AvailableDrinks} from '../App'
 
-export function DrinkList({drinks, inStock}) {
-    const drinkList = buildDrinkList(drinks, inStock)
+export function DrinkList() {
+    const drinks = React.useContext(AvailableDrinks) ?? []
 
-    function buildDrinkList(drinks, inStock) {
-        if (drinks) {
-            return drinks.map(d => (
-                <Drink key={d.name} drink={d} inStock={inStock} />
-            ))
-        } else {
-            return []
-        }
+    function NumDrinks() {
+        const numDrinks = drinks.length
+        return (
+            <p>
+                {numDrinks} {numDrinks === 1 ? 'drink' : 'drinks'} found
+            </p>
+        )
     }
 
-    function numDrinksFound(drinkList) {
-        return (
-            <>
-                {drinkList.length} {drinkList.length === 1 ? 'drink' : 'drinks'}{' '}
-                found
-            </>
-        )
+    function DrinkMap() {
+        return drinks.map(drink => <Drink key={drink.name} drink={drink} />)
     }
 
     return (
         <div id="drink-list">
-            <p>{numDrinksFound(drinkList)}</p>
-            {drinkList}
+            <NumDrinks />
+            <DrinkMap />
         </div>
     )
 }

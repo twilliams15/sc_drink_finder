@@ -1,16 +1,19 @@
 import React from 'react'
 import './styles.css'
-import allDrinks from './data/all_drinks'
 import {
     findDrinksByIngredient,
     findDrinksByName,
     findDrinksMissingOneIngredient,
+    getAvailableDrinks,
 } from './support/helpers'
 import {SearchForm} from './modules/SearchForm'
 import {InStock} from './modules/InStock'
 import {DrinkList} from './modules/DrinkList'
 import {Insights} from './modules/Insights'
 import {Rums} from './modules/Rums'
+
+export const AvailableDrinks = React.createContext([])
+export const CurrentStock = React.createContext('')
 
 export default function App() {
     const [stock, setStock] = React.useState(
@@ -20,13 +23,7 @@ export default function App() {
         getAvailableDrinks(stock)
     )
 
-    function getAvailableDrinks(fromStock = stock) {
-        return allDrinks.filter(d =>
-            d.ingredients.every(i => fromStock.includes(i))
-        )
-    }
-
-    function handleStockChange(e) {
+    function onStockChange(e) {
         let tempStock = stock
         const item = e.target
         const addItemToTempStock = () => (tempStock += item.id)
@@ -38,60 +35,56 @@ export default function App() {
         setDisplayedDrinks(getAvailableDrinks(tempStock))
     }
 
+    const onNameChange = e =>
+        setDisplayedDrinks(findDrinksByName(e.target.value))
+    const onIngredientChange = e =>
+        setDisplayedDrinks(findDrinksByIngredient(e.target.value))
+
+    function show(elementId) {
+        document.getElementById(elementId).style.display = 'block'
+    }
+
+    function hide(elementId) {
+        document.getElementById(elementId).style.display = 'none'
+    }
+
     function displayInStock() {
-        document.getElementById('in-stock').style.display = 'block'
-        document.getElementById('drink-list').style.display = 'block'
-        ;[
-            document.getElementById('search'),
-            document.getElementById('insights'),
-            document.getElementById('rums'),
-        ].forEach(m => {
-            m.style.display = 'none'
-        })
-        setDisplayedDrinks(getAvailableDrinks())
+        show('in-stock')
+        show('drink-list')
+        hide('search')
+        hide('insights')
+        hide('rums')
+        setDisplayedDrinks(getAvailableDrinks(stock))
     }
 
     function displaySearch() {
-        document.getElementById('search').style.display = 'block'
-        document.getElementById('drink-list').style.display = 'block'
-        ;[
-            document.getElementById('in-stock'),
-            document.getElementById('insights'),
-            document.getElementById('rums'),
-        ].forEach(m => {
-            m.style.display = 'none'
-        })
+        show('search')
+        show('drink-list')
+        hide('in-stock')
+        hide('insights')
+        hide('rums')
         setDisplayedDrinks([])
     }
 
     function displayInsights() {
-        document.getElementById('insights').style.display = 'block'
-        document.getElementById('drink-list').style.display = 'block'
-        ;[
-            document.getElementById('search'),
-            document.getElementById('in-stock'),
-            document.getElementById('rums'),
-        ].forEach(m => {
-            m.style.display = 'none'
-        })
+        show('insights')
+        show('drink-list')
+        hide('search')
+        hide('in-stock')
+        hide('rums')
         setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
     }
 
     function displayRums() {
-        document.getElementById('rums').style.display = 'block'
-        ;[
-            document.getElementById('search'),
-            document.getElementById('in-stock'),
-            document.getElementById('insights'),
-            document.getElementById('drink-list'),
-        ].forEach(m => {
-            m.style.display = 'none'
-        })
+        show('rums')
+        hide('search')
+        hide('in-stock')
+        hide('insights')
+        hide('drink-list')
     }
 
-    return (
-        <div>
-            <h1>Smuggler’s Companion</h1>
+    function NavBar() {
+        return (
             <nav>
                 <ul>
                     <li onClick={displayInStock}>In Stock</li>
@@ -100,19 +93,24 @@ export default function App() {
                     <li onClick={displayRums}>Rums</li>
                 </ul>
             </nav>
-            <InStock onStockChange={handleStockChange} inStock={stock} />
-            <SearchForm
-                onNameChange={e =>
-                    setDisplayedDrinks(findDrinksByName(e.target.value))
-                }
-                onIngredientChange={e =>
-                    setDisplayedDrinks(findDrinksByIngredient(e.target.value))
-                }
-            />
-            <Insights inStock={stock} />
-            <Rums />
-            <DrinkList drinks={displayedDrinks} inStock={stock} />
-            <footer />
-        </div>
+        )
+    }
+
+    return (
+        <AvailableDrinks.Provider value={displayedDrinks}>
+            <CurrentStock.Provider value={stock}>
+                <h1>Smuggler’s Companion</h1>
+                <NavBar />
+                <InStock onStockChange={onStockChange} />
+                <SearchForm
+                    onNameChange={onNameChange}
+                    onIngredientChange={onIngredientChange}
+                />
+                <Insights />
+                <Rums />
+                <DrinkList />
+                <footer />
+            </CurrentStock.Provider>
+        </AvailableDrinks.Provider>
     )
 }

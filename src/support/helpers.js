@@ -1,9 +1,15 @@
 import allDrinks from '../data/all_drinks'
 
+export function getAvailableDrinks(stock) {
+    return allDrinks.filter(drink =>
+        drink.ingredients.every(i => stock.includes(i))
+    )
+}
+
 export function findDrinksByName(searchTerm) {
     if (!searchTerm) return
-    return allDrinks.filter(d =>
-        d.name.toLowerCase().includes(searchTerm.toLowerCase())
+    return allDrinks.filter(drink =>
+        drink.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
 }
 
@@ -13,7 +19,7 @@ export function drinkHasIngredient(drink, ingredient) {
 
 export function findDrinksByIngredient(searchTerm) {
     if (!searchTerm) return
-    return allDrinks.filter(d => drinkHasIngredient(d, searchTerm))
+    return allDrinks.filter(drink => drinkHasIngredient(drink, searchTerm))
 }
 
 export function getMissingIngredients(drink, inStock) {
@@ -21,12 +27,14 @@ export function getMissingIngredients(drink, inStock) {
 }
 
 export function findDrinksMissingOneIngredient(inStock) {
-    return allDrinks.filter(d => getMissingIngredients(d, inStock).length === 1)
+    return allDrinks.filter(
+        drink => getMissingIngredients(drink, inStock).length === 1
+    )
 }
 
 export function mostCommonMissingIngredient(inStock) {
     return findDrinksMissingOneIngredient(inStock)
-        .map(d => getMissingIngredients(d, inStock))
+        .map(drink => getMissingIngredients(drink, inStock))
         .flat()
         .reduce(
             (a, b, i, arr) =>
@@ -39,8 +47,8 @@ export function mostCommonMissingIngredient(inStock) {
 }
 
 export function countDrinksMissingIngredient(ingredient, inStock) {
-    return findDrinksMissingOneIngredient(inStock).filter(d =>
-        drinkHasIngredient(d, ingredient)
+    return findDrinksMissingOneIngredient(inStock).filter(drink =>
+        drinkHasIngredient(drink, ingredient)
     ).length
 }
 
