@@ -3,10 +3,9 @@ import './styles.css'
 import {
     findDrinksByIngredient,
     findDrinksByName,
-    findDrinksMissingOneIngredient,
     getAvailableDrinks,
 } from './support/helpers'
-import nav from './support/nav'
+import {NavBar} from './modules/NavBar'
 import {SearchForm} from './modules/SearchForm'
 import {InStock} from './modules/InStock'
 import {DrinkList} from './modules/DrinkList'
@@ -46,39 +45,11 @@ export default function App() {
         setDisplayedDrinks(findDrinksByIngredient(e.target.value))
     }
 
-    function displayInStock() {
-        nav.displayInStock()
-        setDisplayedDrinks(getAvailableDrinks(stock))
-    }
-
-    function displaySearch() {
-        nav.displaySearch()
-        setDisplayedDrinks([])
-    }
-
-    function displayInsights() {
-        nav.displayInsights()
-        setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
-    }
-
-    function NavBar() {
-        return (
-            <nav>
-                <ul>
-                    <li onClick={displayInStock}>In Stock</li>
-                    <li onClick={displaySearch}>Search</li>
-                    <li onClick={displayInsights}>Insights</li>
-                    <li onClick={nav.displayRums}>Rums</li>
-                </ul>
-            </nav>
-        )
-    }
-
     return (
         <AvailableDrinks.Provider value={displayedDrinks}>
             <CurrentStock.Provider value={stock}>
                 <h1>Smuggler’s Companion</h1>
-                <NavBar />
+                <NavBar setDisplayedDrinks={setDisplayedDrinks} />
                 <InStock onStockChange={onStockChange} />
                 <SearchForm
                     onNameChange={onNameChange}
