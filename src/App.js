@@ -23,22 +23,27 @@ export default function App() {
         getAvailableDrinks(stock)
     )
 
+    React.useEffect(() => {
+        window.localStorage.setItem('stock', stock)
+        setDisplayedDrinks(getAvailableDrinks(stock))
+    }, [stock])
+
     function onStockChange(e) {
-        let tempStock = stock
-        const item = e.target
-        const addItemToTempStock = () => (tempStock += item.id)
-        const removeItemFromTempStock = () =>
-            (tempStock = tempStock.replace(item.id, ''))
-        item.checked ? addItemToTempStock() : removeItemFromTempStock()
-        setStock(tempStock)
-        window.localStorage.setItem('stock', tempStock)
-        setDisplayedDrinks(getAvailableDrinks(tempStock))
+        let currentStock = stock
+        setStock(
+            e.target.checked
+                ? currentStock + e.target.id
+                : currentStock.replace(e.target.id, '')
+        )
     }
 
-    const onNameChange = e =>
+    function onNameChange(e) {
         setDisplayedDrinks(findDrinksByName(e.target.value))
-    const onIngredientChange = e =>
+    }
+
+    function onIngredientChange(e) {
         setDisplayedDrinks(findDrinksByIngredient(e.target.value))
+    }
 
     function show(elementId) {
         document.getElementById(elementId).style.display = 'block'
