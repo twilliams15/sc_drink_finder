@@ -40,7 +40,7 @@ export function InStock({onStockChange}: Props) {
                                 id={hyphenate(ingredient)}
                                 type="checkbox"
                                 onChange={onStockChange}
-                                checked={stock.includes(hyphenate(ingredient))}
+                                checked={stock.includes(ingredient)}
                                 value={ingredient}
                             />
                             <label htmlFor={hyphenate(ingredient)}>

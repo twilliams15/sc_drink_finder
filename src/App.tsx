@@ -10,10 +10,10 @@ import {Cocktail} from './react-app-env'
 import {useLocalStorageState} from './support/hooks'
 
 export const AvailableDrinks = React.createContext<Cocktail[]>([])
-export const CurrentStock = React.createContext<string>('')
+export const CurrentStock = React.createContext<string[]>([])
 
 export default function App() {
-    const [stock, setStock] = useLocalStorageState('sc-stock')
+    const [stock, setStock] = useLocalStorageState('sc-stock', [])
     const [displayedDrinks, setDisplayedDrinks] = React.useState(() =>
         getAvailableDrinks(stock)
     )
@@ -26,8 +26,8 @@ export default function App() {
         const stockItem = e.target
         setStock(
             stockItem.checked
-                ? `${stock}+${stockItem.id}`
-                : stock.replace(`+${stockItem.id}`, '')
+                ? [...stock, stockItem.value]
+                : stock.filter((item: string) => item !== stockItem.value)
         )
     }
 

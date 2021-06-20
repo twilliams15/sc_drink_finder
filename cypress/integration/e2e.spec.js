@@ -15,14 +15,12 @@ describe('keeping stock', () => {
         cy.contains(/herbstura/i)
             .click()
             .then(() => {
-                expect(localStorage.getItem('sc-stock')).to.equal(
-                    '"+herbstura"'
-                )
+                expect(localStorage.getItem('sc-stock')).to.equal('herbstura')
             })
     })
 
     it('reads stock from local storage', () => {
-        localStorage.setItem('sc-stock', '"+herbstura"')
+        localStorage.setItem('sc-stock', 'herbstura')
         cy.reload()
         cy.contains(/current stock/i).click()
         cy.getByLabel(/herbstura/i).should('be.checked')

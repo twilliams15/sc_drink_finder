@@ -9,7 +9,7 @@ import * as React from 'react'
 
 function useLocalStorageState(
     key: string,
-    defaultValue = '',
+    defaultValue: string | string[],
     {serialize = JSON.stringify, deserialize = JSON.parse} = {}
 ) {
     const [state, setState] = React.useState(() => {

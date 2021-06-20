@@ -1,9 +1,9 @@
 import {allDrinks} from '../data/all_drinks'
 import {Cocktail} from '../react-app-env'
 
-export function getAvailableDrinks(stock: string) {
+export function getAvailableDrinks(stock: string[]) {
     return allDrinks.filter(drink =>
-        drink.ingredients.every(i => stock.includes(hyphenate(i)))
+        drink.ingredients.every(i => stock.includes(i))
     )
 }
 
@@ -23,17 +23,17 @@ export function findDrinksByIngredient(searchTerm: string) {
     return allDrinks.filter(drink => drinkHasIngredient(drink, searchTerm))
 }
 
-export function getMissingIngredients(drink: Cocktail, inStock: string) {
+export function getMissingIngredients(drink: Cocktail, inStock: string[]) {
     return drink.ingredients.filter(i => !inStock.includes(hyphenate(i)))
 }
 
-export function findDrinksMissingOneIngredient(inStock: string) {
+export function findDrinksMissingOneIngredient(inStock: string[]) {
     return allDrinks.filter(
         drink => getMissingIngredients(drink, inStock).length === 1
     )
 }
 
-export function mostCommonMissingIngredient(inStock: string) {
+export function mostCommonMissingIngredient(inStock: string[]) {
     return findDrinksMissingOneIngredient(inStock)
         .map(drink => getMissingIngredients(drink, inStock))
         .flat()
@@ -49,14 +49,14 @@ export function mostCommonMissingIngredient(inStock: string) {
 
 export function countDrinksMissingIngredient(
     ingredient: string,
-    inStock: string
+    inStock: string[]
 ) {
     return findDrinksMissingOneIngredient(inStock).filter(drink =>
         drinkHasIngredient(drink, ingredient)
     ).length
 }
 
-export function countDrinksMissingMostCommonIngredient(inStock: string) {
+export function countDrinksMissingMostCommonIngredient(inStock: string[]) {
     return countDrinksMissingIngredient(
         mostCommonMissingIngredient(inStock),
         inStock
