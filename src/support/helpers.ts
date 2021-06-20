@@ -24,7 +24,7 @@ export function findDrinksByIngredient(searchTerm: string) {
 }
 
 export function getMissingIngredients(drink: Cocktail, inStock: string[]) {
-    return drink.ingredients.filter(i => !inStock.includes(hyphenate(i)))
+    return drink.ingredients.filter(i => !inStock.includes(i))
 }
 
 export function findDrinksMissingOneIngredient(inStock: string[]) {

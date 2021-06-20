@@ -32,20 +32,17 @@ describe('Drink', () => {
 
     it('displays a list of ingredients', () => {
         drink.ingredients.forEach(ingredient => {
-            expect(
-                screen.getByRole('listitem', {name: ingredient})
-            ).toBeVisible()
+            const item = screen.getByRole('listitem', {name: ingredient})
+            expect(item).toBeVisible()
         })
     })
 
     it('highlights missing ingredients', () => {
-        const missingIngredients = drink.ingredients.filter(
-            ingredient => !stock.includes(ingredient)
-        )
-        missingIngredients.forEach(ingredient => {
-            expect(
-                screen.getByRole('listitem', {name: ingredient})
-            ).toHaveTextContent('*')
+        drink.ingredients.every(ingredient => {
+            const item = screen.getByRole('listitem', {name: ingredient})
+            return stock.includes(ingredient)
+                ? expect(item).not.toHaveTextContent('*')
+                : expect(item).toHaveTextContent('*')
         })
     })
 })

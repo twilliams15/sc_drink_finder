@@ -22,7 +22,7 @@ export function Drink({drink: {ingredients, name, page}}: Props) {
             <section className="ingredients">
                 {ingredients.map(i => (
                     <li key={i} aria-label={i}>
-                        {stock.includes(hyphenate(i)) ? i : highlight(i)}
+                        {stock.includes(i) ? i : highlight(i)}
                     </li>
                 ))}
             </section>
