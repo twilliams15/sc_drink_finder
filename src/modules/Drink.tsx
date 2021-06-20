@@ -2,9 +2,7 @@ import React from 'react'
 import {CurrentStock} from '../App'
 import {Cocktail} from '../react-app-env'
 
-type Props = {
-    drink: Cocktail
-}
+type Props = {drink: Cocktail}
 
 export function Drink({drink: {ingredients, name, page}}: Props) {
     const stock = React.useContext(CurrentStock)
@@ -23,13 +21,13 @@ export function Drink({drink: {ingredients, name, page}}: Props) {
             <section className="ingredients">
                 {ingredients.map(i => (
                     <li key={i} aria-label={i}>
-                        {stock.includes(i) ? i : highlightListItem(i)}
+                        {stock.includes(i) ? i : highlight(i)}
                     </li>
                 ))}
             </section>
         )
 
-        function highlightListItem(item: string) {
+        function highlight(item: string) {
             return `${item} *`
         }
     }
