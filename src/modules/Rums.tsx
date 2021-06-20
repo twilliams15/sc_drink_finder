@@ -3,38 +3,38 @@ import {allRums} from '../data/all_rums'
 import {Rum, RumClassList, RumTypeList} from '../react-app-env'
 
 export function Rums() {
-    function toc(rumList: RumClassList) {
-        return rumList.types.map(rumType => (
-            <li>
-                <a href={`#${rumType.name}`}>{rumType.name}</a>
+    function toc({types}: RumClassList) {
+        return types.map(({name}) => (
+            <li key={name}>
+                <a href={`#${name}`}>{name}</a>
             </li>
         ))
     }
 
-    function rumListElement(rumList: RumClassList) {
+    function rumListElement({class: rumClass, types}: RumClassList) {
         return (
-            <>
-                <h2>{rumList.class}</h2>
-                {rumList.types.map(rumTypesElement)}
-            </>
+            <div key={rumClass}>
+                <h2>{rumClass}</h2>
+                {types.map(rumTypesElement)}
+            </div>
         )
     }
 
-    function rumTypesElement(rumType: RumTypeList) {
+    function rumTypesElement({name, rums}: RumTypeList) {
         return (
-            <>
-                <h3 id={rumType.name}>{rumType.name}</h3>
-                {rumType.rums.map(rumElement)}
-            </>
+            <div key={name}>
+                <h3 id={name}>{name}</h3>
+                {rums.map(rumElement)}
+            </div>
         )
     }
 
-    function rumElement(rum: Rum) {
+    function rumElement({name, origin}: Rum) {
         return (
-            <li>
-                {rum.name}
+            <li key={name}>
+                {name}
                 <br />
-                <span className="origin">{rum.origin}</span>
+                <span className="origin">{origin}</span>
                 <br />
                 <br />
             </li>
