@@ -44,8 +44,8 @@ export default function App() {
     }
 
     return (
-        <AvailableDrinks.Provider value={displayedDrinks}>
-            <CurrentStock.Provider value={stock}>
+        <CurrentStock.Provider value={stock}>
+            <AvailableDrinks.Provider value={displayedDrinks}>
                 <h1>Smuggler’s Companion</h1>
                 <NavBar setDisplayedDrinks={setDisplayedDrinks} />
                 <InStock onStockChange={onStockChange} />
@@ -57,7 +57,7 @@ export default function App() {
                 <Rums />
                 <DrinkList />
                 <footer />
-            </CurrentStock.Provider>
-        </AvailableDrinks.Provider>
+            </AvailableDrinks.Provider>
+        </CurrentStock.Provider>
     )
 }
