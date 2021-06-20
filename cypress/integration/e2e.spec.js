@@ -5,29 +5,31 @@ beforeEach(() => {
 
 describe('keeping stock', () => {
     it('expanding stock shows stock items', () => {
-        cy.get('.stock').should('not.be.visible')
-        cy.get('.accordion').click()
-        cy.get('.stock').should('be.visible')
+        cy.contains(/blended aged rum/i).should('not.be.visible')
+        cy.contains(/current stock/i).click()
+        cy.contains(/blended aged rum/i).should('be.visible')
     })
 
     it('stores stock in local storage', () => {
-        cy.get('.accordion').click()
-        cy.get('#herbstura')
-            .check()
+        cy.contains(/current stock/i).click()
+        cy.contains(/herbstura/i)
+            .click()
             .then(() => {
-                expect(localStorage.getItem('stock')).to.equal('herbstura')
+                expect(localStorage.getItem('sc-stock')).to.equal(
+                    '"+herbstura"'
+                )
             })
     })
 
     it('reads stock from local storage', () => {
-        localStorage.setItem('stock', 'herbstura')
+        localStorage.setItem('sc-stock', '"+herbstura"')
         cy.reload()
-        cy.get('.accordion').click()
-        cy.get('#herbstura').should('be.checked')
+        cy.contains(/current stock/i).click()
+        cy.getByLabel(/herbstura/i).should('be.checked')
     })
 
     it('search by stock returns correct drinks', () => {
-        cy.get('.accordion').click()
+        cy.contains(/current stock/i).click()
         cy.contains('lime juice').click()
         cy.contains('demerara syrup').click()
         cy.contains('allspice dram').click()
@@ -47,19 +49,19 @@ describe('searching for drinks', () => {
     })
 
     it('search for drink returns correct drink', () => {
-        cy.get('#drinkName').type('zom')
+        cy.getByLabel(/by name/i).type('zom')
         cy.get('.drink').should('have.length', 1).and('include.text', 'Zombie')
     })
 
     it('search for ingredient returns correct drinks', () => {
-        cy.get('#ingredient').type('spark')
+        cy.getByLabel(/by ingredient/i).type('spark')
         cy.get('.drink')
             .each(d => d.children())
             .should('include.text', 'sparkling')
     })
 
     it('search for rum number returns correct drinks', () => {
-        cy.get('#rum').select('8')
+        cy.getByLabel(/by rum number/i).select('8')
         cy.get('.drink')
             .each(d => d.children())
             .should(
@@ -71,7 +73,7 @@ describe('searching for drinks', () => {
 
 describe('insights', () => {
     beforeEach(() => {
-        cy.get('.accordion').click()
+        cy.contains(/current stock/i).click()
         cy.contains('lime juice').click()
         cy.contains('demerara syrup').click()
         cy.contains('allspice dram').click()

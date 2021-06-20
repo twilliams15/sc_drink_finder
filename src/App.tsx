@@ -7,29 +7,27 @@ import {
 } from './support/helpers'
 import {DrinkList, Insights, InStock, NavBar, Rums, SearchForm} from './modules'
 import {Cocktail} from './react-app-env'
+import {useLocalStorageState} from './support/hooks'
 
 export const AvailableDrinks = React.createContext<Cocktail[]>([])
 export const CurrentStock = React.createContext<string>('')
 
 export default function App() {
-    const [stock, setStock] = React.useState(
-        () => window.localStorage.getItem('stock') || ''
-    )
+    const [stock, setStock] = useLocalStorageState('sc-stock')
     const [displayedDrinks, setDisplayedDrinks] = React.useState(() =>
         getAvailableDrinks(stock)
     )
 
     React.useEffect(() => {
-        window.localStorage.setItem('stock', stock)
         setDisplayedDrinks(getAvailableDrinks(stock))
     }, [stock])
 
     function onStockChange(e: React.ChangeEvent<HTMLInputElement>) {
-        let currentStock = stock
+        const stockItem = e.target
         setStock(
-            e.target.checked
-                ? currentStock + e.target.id
-                : currentStock.replace(e.target.id, '')
+            stockItem.checked
+                ? `${stock}+${stockItem.id}`
+                : stock.replace(`+${stockItem.id}`, '')
         )
     }
 

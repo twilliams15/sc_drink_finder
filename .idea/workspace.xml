@@ -20,7 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cypress/support/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/support/hooks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Drink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/InStock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/InStock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/support/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/support/helpers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1hQRDsvKuVco06kTjUKYusK3HPc" />
   <component name="ProjectViewState">

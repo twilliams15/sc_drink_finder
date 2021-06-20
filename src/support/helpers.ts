@@ -3,7 +3,7 @@ import {Cocktail} from '../react-app-env'
 
 export function getAvailableDrinks(stock: string) {
     return allDrinks.filter(drink =>
-        drink.ingredients.every(i => stock.includes(i))
+        drink.ingredients.every(i => stock.includes(hyphenate(i)))
     )
 }
 
@@ -24,7 +24,7 @@ export function findDrinksByIngredient(searchTerm: string) {
 }
 
 export function getMissingIngredients(drink: Cocktail, inStock: string) {
-    return drink.ingredients.filter(i => inStock.includes(i) === false)
+    return drink.ingredients.filter(i => !inStock.includes(hyphenate(i)))
 }
 
 export function findDrinksMissingOneIngredient(inStock: string) {
@@ -61,4 +61,8 @@ export function countDrinksMissingMostCommonIngredient(inStock: string) {
         mostCommonMissingIngredient(inStock),
         inStock
     )
+}
+
+export function hyphenate(text: string) {
+    return text.split(' ').join('-')
 }

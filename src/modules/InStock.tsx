@@ -1,6 +1,7 @@
 import React from 'react'
 import {allIngredients} from '../data/all_ingredients'
 import {CurrentStock} from '../App'
+import {hyphenate} from '../support/helpers'
 
 type Props = {
     onStockChange: React.ChangeEventHandler<HTMLInputElement>
@@ -36,12 +37,15 @@ export function InStock({onStockChange}: Props) {
                     return (
                         <li key={ingredient} className="stock">
                             <input
-                                id={ingredient}
+                                id={hyphenate(ingredient)}
                                 type="checkbox"
                                 onChange={onStockChange}
-                                checked={stock.includes(ingredient)}
+                                checked={stock.includes(hyphenate(ingredient))}
+                                value={ingredient}
                             />
-                            <label htmlFor={ingredient}>{ingredient}</label>
+                            <label htmlFor={hyphenate(ingredient)}>
+                                {ingredient}
+                            </label>
                         </li>
                     )
                 })}
