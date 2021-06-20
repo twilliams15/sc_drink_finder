@@ -1,8 +1,9 @@
 import React from 'react'
-import allRums from '../data/all_rums'
+import {allRums} from '../data/all_rums'
+import {Rum, RumClassList, RumTypeList} from '../react-app-env'
 
 export function Rums() {
-    function toc(rumList) {
+    function toc(rumList: RumClassList) {
         return rumList.types.map(rumType => (
             <li>
                 <a href={`#${rumType.name}`}>{rumType.name}</a>
@@ -10,7 +11,7 @@ export function Rums() {
         ))
     }
 
-    function rumListElement(rumList) {
+    function rumListElement(rumList: RumClassList) {
         return (
             <>
                 <h2>{rumList.class}</h2>
@@ -19,7 +20,7 @@ export function Rums() {
         )
     }
 
-    function rumTypesElement(rumType) {
+    function rumTypesElement(rumType: RumTypeList) {
         return (
             <>
                 <h3 id={rumType.name}>{rumType.name}</h3>
@@ -28,7 +29,7 @@ export function Rums() {
         )
     }
 
-    function rumElement(rum) {
+    function rumElement(rum: Rum) {
         return (
             <li>
                 {rum.name}

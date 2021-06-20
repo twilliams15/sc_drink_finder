@@ -1,8 +1,10 @@
-function show(elementId) {
+function show(elementId: string) {
+    // @ts-ignore
     document.getElementById(elementId).style.display = 'block'
 }
 
-function hide(elementId) {
+function hide(elementId: string) {
+    // @ts-ignore
     document.getElementById(elementId).style.display = 'none'
 }
 

@@ -1,6 +1,7 @@
-import i from './all_ingredients'
+import {allIngredients as i} from './all_ingredients'
+import {Cocktail} from '../react-app-env'
 
-export default [
+export const allDrinks: Cocktail[] = [
     {
         name: 'Aku Aku',
         page: 39,

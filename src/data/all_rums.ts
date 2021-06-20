@@ -1,4 +1,6 @@
-export default [
+import {RumClassList} from '../react-app-env'
+
+export const allRums: RumClassList[] = [
     {
         class: 'Molasses and Evaporated Cane Rums',
         types: [
@@ -168,7 +170,8 @@ export default [
                         origin: 'Barbados',
                     },
                     {
-                        name: 'Plantation 5 Year Grand Reserve & 20th Anniversary',
+                        name:
+                            'Plantation 5 Year Grand Reserve & 20th Anniversary',
                         origin: 'Barbados',
                     },
                     {
@@ -225,7 +228,8 @@ export default [
                         origin: 'Puerto Rico',
                     },
                     {
-                        name: 'El Dorado Single Barrel EHP and Single Barrel ICBU',
+                        name:
+                            'El Dorado Single Barrel EHP and Single Barrel ICBU',
                         origin: 'Guyana',
                     },
                     {
@@ -374,7 +378,8 @@ export default [
                 name: 'Cane AOC Martinique Rhum Agricole Vieux (8)',
                 rums: [
                     {
-                        name: 'Clément V.S.O.P., 6 Year Très Vieux, and 10 Year Très Vieux',
+                        name:
+                            'Clément V.S.O.P., 6 Year Très Vieux, and 10 Year Très Vieux',
                         origin: 'Martinique',
                     },
                     {

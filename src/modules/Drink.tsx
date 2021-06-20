@@ -1,7 +1,12 @@
 import React from 'react'
 import {CurrentStock} from '../App'
+import {Cocktail} from '../react-app-env'
 
-export function Drink({drink: {ingredients, name, page}}) {
+type Props = {
+    drink: Cocktail
+}
+
+export function Drink({drink: {ingredients, name, page}}: Props) {
     const stock = React.useContext(CurrentStock)
 
     function NameAndPage() {
@@ -24,7 +29,7 @@ export function Drink({drink: {ingredients, name, page}}) {
             </section>
         )
 
-        function highlightListItem(item) {
+        function highlightListItem(item: string) {
             return `${item} *`
         }
     }

@@ -1,12 +1,17 @@
 import React from 'react'
-import allIngredients from '../data/all_ingredients'
+import {allIngredients} from '../data/all_ingredients'
 import {CurrentStock} from '../App'
 
-export function InStock({onStockChange}) {
+type Props = {
+    onStockChange: React.ChangeEventHandler<HTMLInputElement>
+}
+
+export function InStock({onStockChange}: Props) {
     const stock = React.useContext(CurrentStock)
     const [symbol, setSymbol] = React.useState('+')
 
     function toggleAccordion() {
+        // @ts-ignore
         ;[...document.getElementsByClassName('stock')].forEach(
             toggleItemDisplay
         )
@@ -17,7 +22,7 @@ export function InStock({onStockChange}) {
         symbol === '+' ? setSymbol('–') : setSymbol('+')
     }
 
-    function toggleItemDisplay(item) {
+    function toggleItemDisplay(item: HTMLElement) {
         item.style.display === 'block'
             ? (item.style.display = 'none')
             : (item.style.display = 'block')

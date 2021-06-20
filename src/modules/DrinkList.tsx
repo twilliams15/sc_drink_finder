@@ -14,14 +14,12 @@ export function DrinkList() {
         )
     }
 
-    function DrinkMap() {
-        return drinks.map(drink => <Drink key={drink.name} drink={drink} />)
-    }
-
     return (
         <div id="drink-list">
             <NumDrinks />
-            <DrinkMap />
+            {drinks.map(drink => (
+                <Drink key={drink.name} drink={drink} />
+            ))}
         </div>
     )
 }

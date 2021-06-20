@@ -5,8 +5,13 @@ import {
     getAvailableDrinks,
 } from '../support/helpers'
 import {CurrentStock} from '../App'
+import {Cocktail} from '../react-app-env'
 
-export function NavBar({setDisplayedDrinks}) {
+type Props = {
+    setDisplayedDrinks: React.Dispatch<React.SetStateAction<Cocktail[]>>
+}
+
+export function NavBar({setDisplayedDrinks}: Props) {
     const stock = React.useContext(CurrentStock)
 
     function clickInStock() {

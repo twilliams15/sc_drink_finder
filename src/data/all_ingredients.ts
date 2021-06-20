@@ -1,4 +1,6 @@
-export default {
+import {IngredientList} from '../react-app-env'
+
+export const allIngredients: IngredientList = {
     juices: {
         lime: 'lime juice',
         lemon: 'lemon juice',

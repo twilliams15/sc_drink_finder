@@ -5,14 +5,10 @@ import {
     findDrinksByName,
     getAvailableDrinks,
 } from './support/helpers'
-import {NavBar} from './modules/NavBar'
-import {SearchForm} from './modules/SearchForm'
-import {InStock} from './modules/InStock'
-import {DrinkList} from './modules/DrinkList'
-import {Insights} from './modules/Insights'
-import {Rums} from './modules/Rums'
+import {DrinkList, Insights, InStock, NavBar, Rums, SearchForm} from './modules'
+import {Cocktail} from './react-app-env'
 
-export const AvailableDrinks = React.createContext([])
+export const AvailableDrinks = React.createContext<Cocktail[]>([])
 export const CurrentStock = React.createContext('')
 
 export default function App() {
@@ -28,7 +24,7 @@ export default function App() {
         setDisplayedDrinks(getAvailableDrinks(stock))
     }, [stock])
 
-    function onStockChange(e) {
+    function onStockChange(e: React.ChangeEvent<HTMLInputElement>) {
         let currentStock = stock
         setStock(
             e.target.checked
@@ -37,11 +33,13 @@ export default function App() {
         )
     }
 
-    function onNameChange(e) {
+    function onNameChange(e: React.ChangeEvent<HTMLInputElement>) {
         setDisplayedDrinks(findDrinksByName(e.target.value))
     }
 
-    function onIngredientChange(e) {
+    function onIngredientChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) {
         setDisplayedDrinks(findDrinksByIngredient(e.target.value))
     }
 
