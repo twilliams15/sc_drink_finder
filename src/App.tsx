@@ -9,13 +9,13 @@ import {DrinkList, Insights, InStock, NavBar, Rums, SearchForm} from './modules'
 import {Cocktail} from './react-app-env'
 
 export const AvailableDrinks = React.createContext<Cocktail[]>([])
-export const CurrentStock = React.createContext('')
+export const CurrentStock = React.createContext<string>('')
 
 export default function App() {
     const [stock, setStock] = React.useState(
-        window.localStorage.getItem('stock') || ''
+        () => window.localStorage.getItem('stock') || ''
     )
-    const [displayedDrinks, setDisplayedDrinks] = React.useState(
+    const [displayedDrinks, setDisplayedDrinks] = React.useState(() =>
         getAvailableDrinks(stock)
     )
 
