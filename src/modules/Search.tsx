@@ -1,10 +1,7 @@
 import React from 'react'
-import {SearchFormProps} from '../react-app-env'
+import {SearchProps} from '../react-app-env'
 
-export function SearchForm({
-    onNameChange,
-    onIngredientChange,
-}: SearchFormProps) {
+export function Search({onNameChange, onIngredientChange}: SearchProps) {
     return (
         <form id="search">
             <p>Search for a drink</p>

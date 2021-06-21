@@ -5,7 +5,7 @@ import {
     findDrinksByName,
     getAvailableDrinks,
 } from './support/helpers'
-import {DrinkList, Insights, InStock, NavBar, Rums, SearchForm} from './modules'
+import {DrinkList, Insights, InStock, NavBar, Rums, Search} from './modules'
 import {Cocktail} from './react-app-env'
 import {useLocalStorageState} from './support/hooks'
 
@@ -47,7 +47,7 @@ export default function App() {
                 <h1>Smuggler’s Companion</h1>
                 <NavBar setDisplayedDrinks={setDisplayedDrinks} />
                 <InStock onStockChange={onStockChange} />
-                <SearchForm
+                <Search
                     onNameChange={onNameChange}
                     onIngredientChange={onIngredientChange}
                 />

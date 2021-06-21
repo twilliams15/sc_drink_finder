@@ -27,7 +27,7 @@ export type RumClassList = {
     types: RumTypeList[]
 }
 
-export type SearchFormProps = {
+export type SearchProps = {
     onNameChange: React.ChangeEventHandler<HTMLInputElement>
     onIngredientChange: React.ChangeEventHandler<
         HTMLInputElement | HTMLSelectElement
