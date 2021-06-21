@@ -45,7 +45,7 @@ export function Rums() {
 
     return (
         <div id="rums">
-            <ul>{allRums.map(toc)}</ul>
+            <ul style={{padding: 0}}>{allRums.map(toc)}</ul>
             {allRums.map(rumListElement)}
         </div>
     )
