@@ -21,12 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/integration/e2e.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/commands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/support/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Drink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/__tests__/Drink.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/__tests__/Drink.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/support/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/support/helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/InStock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/InStock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Rums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Rums.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

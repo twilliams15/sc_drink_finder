@@ -9,33 +9,26 @@ type Props = {
 
 export function InStock({onStockChange}: Props) {
     const stock = React.useContext(CurrentStock)
-    const [symbol, setSymbol] = React.useState('+')
 
+    const [symbol, setSymbol] = React.useState('+')
     function toggleSymbol() {
         symbol === '+' ? setSymbol('–') : setSymbol('+')
     }
 
-    function toggleAccordion() {
-        const stockList = document.getElementsByClassName('stock')
-        // @ts-ignore
-        ;[...stockList].forEach(toggleItemDisplay)
+    const [showStock, setShowStock] = React.useState(false)
+    function toggleStock() {
+        setShowStock(!showStock)
         toggleSymbol()
-    }
-
-    function toggleItemDisplay(item: HTMLElement) {
-        item.style.display === 'block'
-            ? (item.style.display = 'none')
-            : (item.style.display = 'block')
     }
 
     function listStockIngredients() {
         return [...Object.keys(allIngredients)].sort().map(cat => (
-            <ul key={cat} className="stock">
+            <ul key={cat}>
                 ~{cat}~
                 {[...Object.keys(allIngredients[cat])].sort().map(ing => {
                     const ingredient = allIngredients[cat][ing]
                     return (
-                        <li key={ingredient} className="stock">
+                        <li key={ingredient}>
                             <input
                                 id={hyphenate(ingredient)}
                                 type="checkbox"
@@ -55,12 +48,12 @@ export function InStock({onStockChange}: Props) {
 
     return (
         <form id="in-stock">
-            <p className="accordion" onClick={toggleAccordion}>
+            <p className="accordion" onClick={toggleStock}>
                 <strong>
                     Current stock <em>({symbol})</em>
                 </strong>
             </p>
-            {listStockIngredients()}
+            {showStock && listStockIngredients()}
             <p>With what you have in stock...</p>
         </form>
     )

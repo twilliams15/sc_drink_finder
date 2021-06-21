@@ -56,33 +56,3 @@ footer {
 #rums {
     display: none;
 }
-
-.module {
-    display: none;
-}
-
-.drink {
-    margin-bottom: 2rem;
-}
-
-.stock {
-    display: none;
-}
-
-.ingredients {
-    text-indent: 1rem;
-    margin-top: 0;
-}
-
-.page {
-    font-size: 1.25rem;
-}
-
-.origin {
-    font-size: 0.9rem;
-    font-style: italic;
-}
-
-#rums ul {
-    padding: 0;
-}

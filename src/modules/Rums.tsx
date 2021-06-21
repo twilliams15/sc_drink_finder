@@ -34,7 +34,9 @@ export function Rums() {
             <li key={name}>
                 {name}
                 <br />
-                <span className="origin">{origin}</span>
+                <span style={{fontSize: '0.9rem', fontStyle: 'italic'}}>
+                    {origin}
+                </span>
                 <br />
                 <br />
             </li>
@@ -43,7 +45,7 @@ export function Rums() {
 
     return (
         <div id="rums">
-            <ul className="rum-toc">{allRums.map(toc)}</ul>
+            <ul>{allRums.map(toc)}</ul>
             {allRums.map(rumListElement)}
         </div>
     )

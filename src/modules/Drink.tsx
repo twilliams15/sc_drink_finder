@@ -1,25 +1,29 @@
 import React from 'react'
 import {CurrentStock} from '../App'
 import {Cocktail} from '../react-app-env'
-import {hyphenate} from '../support/helpers'
 
 type Props = {drink: Cocktail}
 
 export function Drink({drink: {ingredients, name, page}}: Props) {
     const stock = React.useContext(CurrentStock)
+    const [showDetails, setShowDetails] = React.useState(false)
+
+    function toggleDetails() {
+        setShowDetails(!showDetails)
+    }
 
     function NameAndPage() {
         return (
             <h2 aria-label={name}>
                 {name}&nbsp;&nbsp;
-                <span className="page">p.&nbsp;{page}</span>
+                <span style={{fontSize: '1.25rem'}}>p.&nbsp;{page}</span>
             </h2>
         )
     }
 
     function IngredientsList() {
         return (
-            <section className="ingredients">
+            <section style={{textIndent: '1rem', marginTop: 0}}>
                 {ingredients.map(i => (
                     <li key={i} aria-label={i}>
                         {stock.includes(i) ? i : highlight(i)}
@@ -34,7 +38,7 @@ export function Drink({drink: {ingredients, name, page}}: Props) {
     }
 
     return (
-        <div className="drink">
+        <div onClick={toggleDetails}>
             <NameAndPage />
             <IngredientsList />
         </div>
