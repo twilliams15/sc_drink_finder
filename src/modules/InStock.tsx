@@ -21,39 +21,52 @@ export function InStock({onStockChange}: Props) {
         toggleSymbol()
     }
 
-    function listStockIngredients() {
-        return [...Object.keys(allIngredients)].sort().map(cat => (
-            <ul key={cat}>
-                ~{cat}~
-                {[...Object.keys(allIngredients[cat])].sort().map(ing => {
-                    const ingredient = allIngredients[cat][ing]
-                    return (
-                        <li key={ingredient}>
-                            <input
-                                id={hyphenate(ingredient)}
-                                type="checkbox"
-                                onChange={onStockChange}
-                                checked={stock.includes(ingredient)}
-                                value={ingredient}
-                            />
-                            <label htmlFor={hyphenate(ingredient)}>
-                                {ingredient}
-                            </label>
-                        </li>
-                    )
-                })}
-            </ul>
-        ))
+    function ListStockIngredients() {
+        return (
+            <>
+                {[...Object.keys(allIngredients)].sort().map(cat => (
+                    <ul key={cat}>
+                        ~{cat}~
+                        {[...Object.keys(allIngredients[cat])]
+                            .sort()
+                            .map(ing => {
+                                const ingredient = allIngredients[cat][ing]
+                                return (
+                                    <li key={ingredient}>
+                                        <input
+                                            id={hyphenate(ingredient)}
+                                            type="checkbox"
+                                            onChange={onStockChange}
+                                            checked={stock.includes(ingredient)}
+                                            value={ingredient}
+                                        />
+                                        <label htmlFor={hyphenate(ingredient)}>
+                                            {ingredient}
+                                        </label>
+                                    </li>
+                                )
+                            })}
+                    </ul>
+                ))}
+            </>
+        )
     }
 
     return (
         <form id="in-stock">
-            <p className="accordion" onClick={toggleStock}>
+            <p onClick={toggleStock}>
                 <strong>
                     Current stock <em>({symbol})</em>
                 </strong>
             </p>
-            {showStock && listStockIngredients()}
+            {showStock && (
+                <>
+                    <ListStockIngredients />
+                    <p onClick={toggleStock} style={{marginLeft: '3rem'}}>
+                        <em>~ close ~</em>
+                    </p>
+                </>
+            )}
             <p>With what you have in stock...</p>
         </form>
     )
