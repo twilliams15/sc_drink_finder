@@ -11,30 +11,51 @@ export function Menu() {
         setDisplayedDrinks(availableDrinks)
     }, [])
 
-    function Drink({name}: {name: string}) {
-        return <h2>{name}</h2>
+    function MenuDrink({name}: {name: string}) {
+        return <h2 style={{color: 'teal'}}>{name}</h2>
     }
 
-    function Ingredients({items}: {items: string[]}) {
+    function MenuIngredients({items}: {items: string[]}) {
         const removeParens = (item: string) => item.substr(0, item.indexOf('('))
 
         return (
-            <ul>
-                {items.map(item => (
-                    <li>{item.includes('(') ? removeParens(item) : item}</li>
-                ))}
-            </ul>
+            <>
+                <ul style={{padding: 0, marginTop: '-0.4rem'}}>
+                    {items.map(item => (
+                        <li key={item}>
+                            {item.includes('(') ? removeParens(item) : item}
+                        </li>
+                    ))}
+                </ul>
+                ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+            </>
         )
     }
 
     return (
-        <div>
-            {availableDrinks.map(drink => (
-                <>
-                    <Drink name={drink.name} />
-                    <Ingredients items={drink.ingredients} />
-                </>
-            ))}
+        <div style={{backgroundColor: 'white'}}>
+            <div
+                style={{
+                    backgroundImage:
+                        'url("https://media.istockphoto.com/vectors/tentacles-vector-id1087015352?k=6&m=1087015352&s=612x612&w=0&h=SZmL0s1I3EwgULWp9tzfp-r3pIU-hpOrEF6UNRq3yI0=")',
+                    backgroundSize: 'cover',
+                    padding: '12rem 0',
+                }}
+            />
+            <div
+                style={{
+                    textAlign: 'center',
+                    paddingBottom: '12rem',
+                }}
+            >
+                <h1 style={{color: 'teal'}}>Drink Menu</h1>~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+                {availableDrinks.map(drink => (
+                    <div key={drink.name}>
+                        <MenuDrink name={drink.name} />
+                        <MenuIngredients items={drink.ingredients} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
