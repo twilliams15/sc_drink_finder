@@ -1,14 +1,24 @@
 import React from 'react'
 import {allIngredients} from '../data/all_ingredients'
-import {CurrentStock} from '../App'
-import {hyphenate} from '../support/helpers'
+import {AvailableDrinks, CurrentStock} from '../App'
+import {getAvailableDrinks, hyphenate} from '../support/helpers'
 
-type Props = {
-    onStockChange: React.ChangeEventHandler<HTMLInputElement>
-}
+export function InStock() {
+    const [stock, setStock] = React.useContext(CurrentStock)
+    const [, setDisplayedDrinks] = React.useContext(AvailableDrinks)
 
-export function InStock({onStockChange}: Props) {
-    const stock = React.useContext(CurrentStock)
+    React.useEffect(() => {
+        setDisplayedDrinks(getAvailableDrinks(stock))
+    }, [stock])
+
+    function onStockChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const stockItem = e.target
+        setStock(
+            stockItem.checked
+                ? [...stock, stockItem.value]
+                : stock.filter((item: string) => item !== stockItem.value)
+        )
+    }
 
     const [symbol, setSymbol] = React.useState('+')
     function toggleSymbol() {

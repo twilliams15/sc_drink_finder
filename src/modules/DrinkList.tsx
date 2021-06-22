@@ -3,7 +3,7 @@ import {Drink} from './Drink'
 import {AvailableDrinks} from '../App'
 
 export function DrinkList() {
-    const drinks = React.useContext(AvailableDrinks) ?? []
+    const [drinks] = React.useContext(AvailableDrinks)
     const numDrinks = drinks.length
 
     return (

@@ -1,7 +1,24 @@
 import React from 'react'
-import {SearchProps} from '../react-app-env'
+import {AvailableDrinks} from '../App'
+import {findDrinksByIngredient, findDrinksByName} from '../support/helpers'
 
-export function Search({onNameChange, onIngredientChange}: SearchProps) {
+export function Search() {
+    const [, setDisplayedDrinks] = React.useContext(AvailableDrinks)
+
+    React.useEffect(() => {
+        setDisplayedDrinks([])
+    }, [])
+
+    function onNameChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setDisplayedDrinks(findDrinksByName(e.target.value))
+    }
+
+    function onIngredientChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) {
+        setDisplayedDrinks(findDrinksByIngredient(e.target.value))
+    }
+
     return (
         <form id="search">
             <p>Search for a drink</p>

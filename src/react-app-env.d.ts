@@ -1,7 +1,5 @@
 /// <reference types="react-scripts" />
 
-import React from 'react'
-
 export type Cocktail = {
     name: string
     page: number
@@ -25,11 +23,4 @@ export type RumTypeList = {
 export type RumClassList = {
     class: string
     types: RumTypeList[]
-}
-
-export type SearchProps = {
-    onNameChange: React.ChangeEventHandler<HTMLInputElement>
-    onIngredientChange: React.ChangeEventHandler<
-        HTMLInputElement | HTMLSelectElement
-    >
 }

@@ -1,45 +1,22 @@
-import nav from '../support/nav'
 import React from 'react'
-import {
-    findDrinksMissingOneIngredient,
-    getAvailableDrinks,
-} from '../support/helpers'
-import {CurrentStock} from '../App'
-import {Cocktail} from '../react-app-env'
+import {Link} from 'react-router-dom'
 
-type Props = {
-    setDisplayedDrinks: React.Dispatch<React.SetStateAction<Cocktail[]>>
-}
-
-export function NavBar({setDisplayedDrinks}: Props) {
-    const stock = React.useContext(CurrentStock)
-
-    function clickInStock() {
-        nav.displayInStock()
-        setDisplayedDrinks(getAvailableDrinks(stock))
-    }
-
-    function clickSearch() {
-        nav.displaySearch()
-        setDisplayedDrinks([])
-    }
-
-    function clickInsights() {
-        nav.displayInsights()
-        setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
-    }
-
-    function clickRums() {
-        nav.displayRums()
-    }
-
+export function NavBar() {
     return (
         <nav>
             <ul>
-                <li onClick={clickInStock}>In Stock</li>
-                <li onClick={clickSearch}>Search</li>
-                <li onClick={clickInsights}>Insights</li>
-                <li onClick={clickRums}>Rums</li>
+                <li>
+                    <Link to="/">In Stock</Link>
+                </li>
+                <li>
+                    <Link to="/search">Search</Link>
+                </li>
+                <li>
+                    <Link to="/insights">Insights</Link>
+                </li>
+                <li>
+                    <Link to="/rums">Rums</Link>
+                </li>
             </ul>
         </nav>
     )

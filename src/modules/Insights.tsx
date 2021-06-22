@@ -1,12 +1,18 @@
 import React from 'react'
 import {
     countDrinksMissingMostCommonIngredient,
+    findDrinksMissingOneIngredient,
     mostCommonMissingIngredient,
 } from '../support/helpers'
-import {CurrentStock} from '../App'
+import {AvailableDrinks, CurrentStock} from '../App'
 
 export function Insights() {
-    const stock = React.useContext(CurrentStock)
+    const [stock] = React.useContext(CurrentStock)
+    const [, setDisplayedDrinks] = React.useContext(AvailableDrinks)
+
+    React.useEffect(() => {
+        setDisplayedDrinks(findDrinksMissingOneIngredient(stock))
+    }, [])
 
     return (
         <div id="insights">

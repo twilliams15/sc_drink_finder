@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660964e5-d061-4ff8-87c1-94ebbc28cfbe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Drink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Drink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/DrinkList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/DrinkList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/InStock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/InStock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Insights.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Insights.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/support/nav.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +93,7 @@
       <recent name="$PROJECT_DIR$/cypress/integration" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.cy:run">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -140,9 +149,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.cy:run" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.cy:open" />
       </list>
     </recent_temporary>
@@ -167,6 +176,7 @@
       <workItem from="1603398444660" duration="1412000" />
       <workItem from="1608667566842" duration="8414000" />
       <workItem from="1624047454949" duration="4379000" />
+      <workItem from="1624329103941" duration="2136000" />
     </task>
     <servers />
   </component>
