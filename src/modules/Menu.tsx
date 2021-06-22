@@ -33,29 +33,19 @@ export function Menu() {
     }
 
     return (
-        <div style={{backgroundColor: 'white'}}>
-            <div
-                style={{
-                    backgroundImage:
-                        'url("https://media.istockphoto.com/vectors/tentacles-vector-id1087015352?k=6&m=1087015352&s=612x612&w=0&h=SZmL0s1I3EwgULWp9tzfp-r3pIU-hpOrEF6UNRq3yI0=")',
-                    backgroundSize: 'cover',
-                    padding: '12rem 0',
-                }}
-            />
-            <div
-                style={{
-                    textAlign: 'center',
-                    paddingBottom: '12rem',
-                }}
-            >
-                <h1 style={{color: 'teal'}}>Drink Menu</h1>~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-                {availableDrinks.map(drink => (
-                    <div key={drink.name}>
-                        <MenuDrink name={drink.name} />
-                        <MenuIngredients items={drink.ingredients} />
-                    </div>
-                ))}
-            </div>
+        <div
+            style={{
+                textAlign: 'center',
+                paddingBottom: '4rem',
+            }}
+        >
+            <h1 style={{color: 'teal'}}>Drink Menu</h1>
+            {availableDrinks.map(drink => (
+                <div key={drink.name}>
+                    <MenuDrink name={drink.name} />
+                    <MenuIngredients items={drink.ingredients} />
+                </div>
+            ))}
         </div>
     )
 }
