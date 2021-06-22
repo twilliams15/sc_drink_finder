@@ -6,6 +6,9 @@ export function NavBar() {
         <nav>
             <ul>
                 <li>
+                    <Link to="/menu">Menu</Link>
+                </li>
+                <li>
                     <Link to="/">In Stock</Link>
                 </li>
                 <li>

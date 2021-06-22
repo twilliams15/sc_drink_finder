@@ -2,7 +2,15 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './styles.css'
 import {getAvailableDrinks} from './support/helpers'
-import {DrinkList, Insights, InStock, NavBar, Rums, Search} from './modules'
+import {
+    DrinkList,
+    Insights,
+    InStock,
+    Menu,
+    NavBar,
+    Rums,
+    Search,
+} from './modules'
 import {Cocktail} from './react-app-env'
 import {useLocalStorageState} from './support/hooks'
 
@@ -29,20 +37,25 @@ export default function App() {
                     <h1>Smuggler’s Companion</h1>
                     <NavBar />
                     <Switch>
+                        <Route path="/menu">
+                            <Menu />
+                        </Route>
                         <Route path="/search">
                             <Search />
+                            <DrinkList />
                         </Route>
                         <Route path="/insights">
                             <Insights />
+                            <DrinkList />
                         </Route>
                         <Route path="/rums">
                             <Rums />
                         </Route>
                         <Route path="/">
                             <InStock />
+                            <DrinkList />
                         </Route>
                     </Switch>
-                    <DrinkList />
                     <footer />
                 </Router>
             </AvailableDrinks.Provider>
